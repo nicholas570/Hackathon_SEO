@@ -1,14 +1,12 @@
 import React from 'react';
-import './App.css';
+import Router from './component/router/Router';
 
-import Test from './Test';
+import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Test text="React/Eslint/Prettier/Husky template for VSC" />
-      </header>
+      <Router />
     </div>
   );
 }
