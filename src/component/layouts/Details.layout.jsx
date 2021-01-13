@@ -31,7 +31,7 @@ function DetailsLayout({ children }) {
           <FontAwesomeIcon
             icon={faArrowCircleLeft}
             className={style.arrow}
-            onClick={() => history.push('/recherche')}
+            onClick={() => history.push('/annonces')}
           />
           Retour aux annonces
         </section>

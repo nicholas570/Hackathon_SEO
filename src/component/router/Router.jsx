@@ -8,6 +8,7 @@ import Search from '../views/Search';
 import PrivateRoute from './PrivateRoute';
 import Details from '../views/Details';
 import Shipping from '../views/Shipping';
+import NotFound from '../views/NotFound';
 
 function Router() {
   return (
@@ -29,6 +30,12 @@ function Router() {
           path="/annonces/:slug"
           layout={DetailsLayout}
           component={Details}
+        />
+        <PrivateRoute
+          exact
+          path="*"
+          layout={DetailsLayout}
+          component={NotFound}
         />
       </Switch>
     </BrowserRouter>
