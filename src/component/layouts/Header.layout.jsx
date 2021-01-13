@@ -9,7 +9,7 @@ function HeaderLayout({ children }) {
   return (
     <>
       <header className={style.header}>
-        <h1>Paye ton stage</h1>
+        <h1 className={style.brand}>Paye ton stage</h1>
         <FontAwesomeIcon
           style={{
             color: '#F8DDBE',
