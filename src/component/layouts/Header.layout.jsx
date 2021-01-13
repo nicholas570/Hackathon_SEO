@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
-import style from '../../css/Header.module.css';
+import style from '../../css/HeaderAndFooter.module.css';
 
 function HeaderLayout({ children }) {
   return (
@@ -17,7 +17,7 @@ function HeaderLayout({ children }) {
           icon={faShoppingCart}
         />
       </header>
-      <div>{children}</div>
+      <div className={style.container}>{children}</div>
     </>
   );
 }
