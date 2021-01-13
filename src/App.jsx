@@ -1,12 +1,11 @@
 import React from 'react';
-import Test from './Test';
+
+import Router from './component/router/Router';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Test text="React/Eslint/Prettier/Husky template for VSC" />
-      </header>
+      <Router />
     </div>
   );
 }
