@@ -1,0 +1,11 @@
+.announcementsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .announcementsContainer {
+    margin: 100px 0;
+  }
+}
