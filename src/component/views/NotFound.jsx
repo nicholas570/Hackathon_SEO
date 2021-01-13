@@ -1,9 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-import imprimante from '../../Assets/Logo/imprimante.svg';
-import cafe from '../../Assets/Logo/café.svg';
-
 import style from '../../css/NotFound.module.css';
 
 function NotFound() {
