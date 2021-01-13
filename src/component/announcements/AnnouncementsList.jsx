@@ -1,7 +1,7 @@
 import React from 'react';
-import AnnouncementCard from './common/AnnouncementCard';
-import FakeAnnouncements from '../FakeAnnouncements';
-import styles from './AnnouncementsList.module.css';
+import AnnouncementCard from './AnnouncementCard';
+import FakeAnnouncements from '../../FakeAnnouncements';
+import styles from '../../css/AnnouncementsList.module.css';
 
 export default function AnnouncementsList() {
   return (

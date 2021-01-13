@@ -1,4 +1,5 @@
 import linkedinSmall from './Assets/Images/linkedin-small.png';
+import appleSmall from './Assets/Images/apple-small.png';
 
 const FakeAnnouncements = [
   {
@@ -13,7 +14,7 @@ const FakeAnnouncements = [
     prix: '100€',
     localisation: 'Nantes',
     expertise: 'Back End',
-    logoSmall: linkedinSmall,
+    logoSmall: appleSmall,
   },
 ];
 
