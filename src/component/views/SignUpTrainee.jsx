@@ -9,11 +9,11 @@ import Styles from '../../css/SignUp.module.css';
 
 const SignUpTrainee = () => {
   const [state, setState] = useState({
+    nom: '',
+    prenom: '',
     email: '',
     password: '',
     password2: '',
-    nom: '',
-    prenom: '',
   });
   const [cgu, setCgu] = useState(false);
   const history = useHistory();
@@ -90,6 +90,7 @@ const SignUpTrainee = () => {
               name="email"
               label="Adresse email :"
               placeholder="email@email.com"
+              type="email"
               value={state.email}
               onChange={handleChange}
             />
@@ -97,6 +98,7 @@ const SignUpTrainee = () => {
               name="password"
               label="mot de passe :"
               placeholder="********"
+              type="password"
               value={state.password}
               onChange={handleChange}
             />
@@ -104,6 +106,7 @@ const SignUpTrainee = () => {
               name="password2"
               label="mot de passe :"
               placeholder="********"
+              type="password"
               value={state.password2}
               onChange={handleChange}
             />

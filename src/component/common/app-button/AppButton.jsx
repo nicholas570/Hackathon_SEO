@@ -8,6 +8,7 @@ function AppButton(props) {
   return (
     <button
       className={`${styles.appButton} ${disabled && styles.btnDisabled}`}
+      // eslint-disable-next-line react/button-has-type
       type={isSubmit ? 'submit' : 'button'}
       disabled={disabled}
       onClick={onClick}
