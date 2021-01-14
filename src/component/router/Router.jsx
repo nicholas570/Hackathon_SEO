@@ -9,13 +9,22 @@ import PrivateRoute from './PrivateRoute';
 import Details from '../views/Details';
 import Shipping from '../views/Shipping';
 import NotFound from '../views/NotFound';
+
 import AnnouncementDetailled from '../AnnouncementDetailled/AnnouncementDetailled';
+
+import SignIn from '../views/SignIn';
+import SignUpTrainee from '../views/SignUpTrainee';
+import SignUpCompany from '../views/SignUpCompany';
+
 
 function Router() {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/Connexion" component={SignIn} />
+        <Route exact path="/inscription-stagiaire" component={SignUpTrainee} />
+        <Route exact path="/inscription-entreprise" component={SignUpCompany} />
         <PrivateRoute
           exact
           path="/annonces"
