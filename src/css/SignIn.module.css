@@ -1,0 +1,63 @@
+.signIn {
+  width: 100vw;
+  height: 100vh;
+}
+
+.signInBgImg {
+  background-image: url('../Assets//Images/background.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.signInContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signInHead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signInTitle {
+  color: var(--light-grey-font-background);
+  font-size: 4rem;
+  margin-top: 2.5rem;
+}
+
+.signInSecondTitle{
+  font-size: 2rem;
+}
+
+.signInDescription {
+  color: var(--light-grey-font-background);
+  font-size: 1.5rem;
+}
+
+.signInForm {
+  width: 65%;
+  display: flex;
+  margin-top: 2rem;
+  padding: 1rem 1rem 0 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-grey-background);
+  border-radius: 10px;
+}
+
+.signInForgot {
+  color: #000;
+  font-size: 0.75rem;
+  width: 65%;
+  text-align: right;
+}
