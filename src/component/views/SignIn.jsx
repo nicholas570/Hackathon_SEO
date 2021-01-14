@@ -25,6 +25,7 @@ const SignIn = () => {
       .post('http://localhost:8080/login', state)
       .then(({ data }) => {
         localStorage.setItem('TOKEN', data.token);
+        localStorage.setItem('USER', JSON.stringify(data.user));
         history.push('/annonces');
       })
       .catch((err) => {
