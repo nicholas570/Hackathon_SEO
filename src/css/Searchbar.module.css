@@ -1,0 +1,29 @@
+.searchbar {
+  text-align: center;
+  margin: 1.3rem 0;
+}
+
+.searchbarContent {
+  background-image: url('../Assets/icons/search.png');
+  background-position: 0.5rem 0.8em;
+  background-repeat: no-repeat;
+  background-color: var(--light-grey-background);
+  border: 1px solid var(--light-grey-stroke);
+  border-radius: 20px;
+  padding: 0.5rem 1rem 0.5rem 1.6rem;
+  width: 14rem;
+}
+
+.searchbarContent:focus {
+  outline: 0;
+}
+
+.searchbarContent::placeholder {
+  color: #7e7e7e;
+}
+
+@media screen and (min-width: 768px) {
+  .searchbarContent {
+    width: 30rem;
+  }
+}

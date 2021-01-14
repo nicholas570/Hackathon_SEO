@@ -10,11 +10,13 @@ export default function AnnouncementCard({ announcement }) {
         alt="logo"
       />
       <div className={styles.cardDescription}>
-        <h3>{announcement.name}</h3>
+        <h3>{announcement.nom}</h3>
         <h4>{announcement.expertise}</h4>
         <p>{announcement.localisation}</p>
       </div>
-      <button className={styles.cardButton} type="button">{announcement.prix}</button>
+      <button className={styles.cardButton} type="button">
+        {announcement.prix}
+      </button>
     </div>
   );
 }

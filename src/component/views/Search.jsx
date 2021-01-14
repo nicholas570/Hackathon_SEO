@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import AnnouncementsList from '../announcements/AnnouncementsList';
+import Searchbar from '../announcements/Searchbar';
 
 function Search() {
+  const [search, setSearch] = useState('');
   return (
     <div>
       <Helmet>
@@ -16,8 +18,9 @@ function Search() {
         <title>Annonces</title>
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
-      La recherche
-      <AnnouncementsList />
+      <h2>Les annonces</h2>
+      <Searchbar search={search} setSearch={setSearch} />
+      <AnnouncementsList search={search} />
     </div>
   );
 }
