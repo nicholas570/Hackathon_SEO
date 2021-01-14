@@ -13,6 +13,7 @@ export default function AnnouncementsList({ search }) {
         `${process.env.REACT_APP_SERVER}/annonces`,
         {
           headers: {
+            authorization: `Bearer ${localStorage.getItem('TOKEN')}`,
             'Access-Control-Allow-Origin': process.env.REACT_APP_SERVER,
           },
         }
