@@ -1,6 +1,7 @@
 import React from 'react';
 
 import style from './AnnoucementCard.module.css';
+import announcementPropType from '../../prop-types/AnnouncementPropTypes';
 
 const AnnoucementCard = ({
   logo_small,
@@ -14,9 +15,9 @@ const AnnoucementCard = ({
       <img src={logo_small} alt={`logo ${name}`} />
       <section className={style.descriptionCard}>
         <div className={style.decriptionCard}>
-          <h3>{name}</h3>
-          <h4>{expertise}</h4>
-          <p>{localisation}</p>
+          <h3 className={style.company}>{name}</h3>
+          <h4 className={style.expert}>{expertise}</h4>
+          <p className={style.location}>{localisation}</p>
         </div>
         <p className={style.price}>{prix}</p>
       </section>
@@ -25,3 +26,5 @@ const AnnoucementCard = ({
 };
 
 export default AnnoucementCard;
+
+AnnoucementCard.propTypes = announcementPropType;
