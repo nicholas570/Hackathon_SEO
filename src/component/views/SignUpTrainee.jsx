@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import AppButton from '../common/app-button/AppButton';
@@ -7,7 +7,24 @@ import AppInput from '../common/app-input/AppInput';
 import Styles from '../../css/SignUp.module.css';
 
 const SignUpTrainee = () => {
+  const [state, setState] = useState({
+    email: '',
+    password: '',
+    password2: '',
+    nom: '',
+    prenom: '',
+  });
   const history = useHistory();
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setState({
+      ...state,
+      [name]: value,
+    });
+  };
+
   return (
     <section className={Styles.signUp}>
       <div className={Styles.signUpBgImg}>
@@ -29,11 +46,23 @@ const SignUpTrainee = () => {
           <form className={Styles.signUpForm}>
             <h2 className={Styles.signUpSecondTitle}>Inscription</h2>
 
-            <AppInput label="Prénom :" placeholder="John" />
-            <AppInput label="Nom :" placeholder="Doe" />
-            <AppInput label="Adresse email :" placeholder="email@email.com" />
-            <AppInput label="mot de passe :" placeholder="********" />
-            <AppInput label="mot de passe :" placeholder="********" />
+            <AppInput name="prenom" label="Prénom :" placeholder="John" />
+            <AppInput name="nom" label="Nom :" placeholder="Doe" />
+            <AppInput
+              name="email"
+              label="Adresse email :"
+              placeholder="email@email.com"
+            />
+            <AppInput
+              name="password"
+              label="mot de passe :"
+              placeholder="********"
+            />
+            <AppInput
+              name="password2"
+              label="mot de passe :"
+              placeholder="********"
+            />
             <div className={Styles.signUpCheck}>
               <input className={Styles.signUpCheckox} type="checkbox" />
               <span>j&apos;accepte</span>
