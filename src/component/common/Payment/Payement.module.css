@@ -1,0 +1,10 @@
+.wrapperPayement {
+  margin: 0 0.5rem;
+}
+
+.IconPayement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+}
