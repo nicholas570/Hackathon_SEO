@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import AnnouncementsList from '../announcements/AnnouncementsList';
 import Searchbar from '../announcements/Searchbar';
+import styles from '../../css/Search.module.css';
 
 function Search() {
   const [search, setSearch] = useState('');
   return (
-    <div>
+    <div className={styles.announcementsPage}>
       <Helmet>
         <meta charSet="utf-8" />
         <meta name="description" content="La page de recherche" />
