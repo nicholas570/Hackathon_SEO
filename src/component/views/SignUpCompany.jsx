@@ -71,10 +71,8 @@ const SignUpCompany = () => {
               onClick={() => history.push('/inscription-stagiaire')}
             />
           </div>
-          <form className={Styles.signUpForm}>
-            <h2 className={Styles.signUpSecondTitle} onSubmit={handleSubmit}>
-              Inscription
-            </h2>
+          <form className={Styles.signUpForm} onSubmit={handleSubmit}>
+            <h2 className={Styles.signUpSecondTitle}>Inscription</h2>
             <AppInput
               name="nom"
               label="Nom :"
@@ -83,14 +81,14 @@ const SignUpCompany = () => {
               onChange={handleChange}
             />
             <AppInput
-              name="Adresse"
+              name="adresse"
               label="Adresse :"
               placeholder="10 rue du stage"
               value={state.state}
               onChange={handleChange}
             />
             <AppInput
-              name="Adresse email"
+              name="email"
               label="Adresse email :"
               placeholder="email@email.com"
               type="email"
@@ -98,7 +96,7 @@ const SignUpCompany = () => {
               onChange={handleChange}
             />
             <AppInput
-              name="Téléphone"
+              name="telephone"
               label="Téléphone :"
               placeholder="07 00 00 00 00"
               value={state.state}
@@ -112,7 +110,7 @@ const SignUpCompany = () => {
               onChange={handleChange}
             />
             <AppInput
-              name="Password"
+              name="password"
               label="mot de passe :"
               placeholder="********"
               type="password"
@@ -120,7 +118,7 @@ const SignUpCompany = () => {
               onChange={handleChange}
             />
             <AppInput
-              name="Password"
+              name="password2"
               label="mot de passe :"
               placeholder="********"
               type="password"
@@ -135,11 +133,7 @@ const SignUpCompany = () => {
               />
               <span>j&apos;accepte</span>
             </div>
-            <AppButton
-              title="Je me connecte"
-              onClick={() => history.push('/annonces')}
-              isSubmit
-            />
+            <AppButton title="Je me connecte" isSubmit />
           </form>
         </div>
       </div>

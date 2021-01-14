@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
+
 import AnnouncementCard from './AnnouncementCard';
 import styles from '../../css/AnnouncementsList.module.css';
 
 export default function AnnouncementsList({ search }) {
   const [announcements, setannouncements] = useState([]);
+  const history = useHistory();
 
   const fetchAnnouncements = async () => {
     try {
@@ -22,7 +25,10 @@ export default function AnnouncementsList({ search }) {
       const { annonces } = result.data;
       setannouncements(annonces);
     } catch (error) {
-      throw new Error(error);
+      if (error) {
+        console.error(error);
+        history.push('/Connexion');
+      }
     }
   };
 
