@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { Helmet } from 'react-helmet';
@@ -6,8 +6,14 @@ import { Helmet } from 'react-helmet';
 import styles from '../../css/AnnouncementDetail.module.css';
 import doctolib from '../../Assets/Images/doctolib.png';
 import doctobig from '../../Assets/Images/doctobig.png';
+import { AnnoncesContext } from '../../Context/AnnoncesContext';
 
 export default function AnnouncementDetailled({ announcement }) {
+  const { annonces, setAnnonces } = useContext(AnnoncesContext);
+  const handleAnnonces = () => {
+    setAnnonces([annonces, ...announcement]);
+  };
+
   return (
     <>
       <Helmet>
@@ -61,7 +67,11 @@ export default function AnnouncementDetailled({ announcement }) {
             </p>
           </div>
           <div className={styles.annonceDetailPrixContener}>
-            <button className={styles.annonceDetailPrix} type="button">
+            <button
+              className={styles.annonceDetailPrix}
+              type="button"
+              onClick={handleAnnonces}
+            >
               {announcement.prix}
             </button>
             <FontAwesomeIcon
