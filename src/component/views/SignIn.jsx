@@ -15,6 +15,16 @@ const SignIn = () => {
             <h1 className={Styles.signInTitle}>Paye ton stage</h1>
             <p className={Styles.signInDescription}>Lorem lorem lorem</p>
           </div>
+          <div className={Styles.signInGrpButton}>
+            <AppButton
+              title="Inscription stagiaire"
+              onClick={() => history.push('/inscription-stagiaire')}
+            />
+            <AppButton
+              title="Inscription entreprise"
+              onClick={() => history.push('/inscription-entreprise')}
+            />
+          </div>
           <form className={Styles.signInForm}>
             <h2 className={Styles.signInSecondTitle}>Connexion</h2>
             <AppInput label="adresse email :" placeholder="email@email.com" />

@@ -18,7 +18,6 @@ const SignUpCompany = () => {
           </div>
           <form className={Styles.signUpForm}>
             <h2 className={Styles.signUpSecondTitle}>Inscription</h2>
-
             <AppInput label="Nom :" placeholder="société" />
             <AppInput label="Adresse :" placeholder="10 rue du stage" />
             <AppInput label="Adresse email :" placeholder="email@email.com" />
