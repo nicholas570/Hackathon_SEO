@@ -17,11 +17,14 @@ function Home() {
       <div className={Styles.homeBgImg}>
         <Helmet>
           <meta charSet="utf-8" />
-          <meta name="description" content="La home page" />
+          <meta
+            name="description"
+            content="Paye Ton Stage, le site qui met en relation les entreprises et les futurs pépites de la tech."
+          />
           <meta name="author" content="Les Stagiaires X Paye Ton Stage" />
-          <meta content="stage, alternance, dev, developpeur, tech, etudes" />
-          <title>Inscription | Connection</title>
+          <meta name="viewport" content="width=device-width,initial-scale=1" />
           <link rel="canonical" href="http://mysite.com/example" />
+          <title>Inscription | Connection</title>
         </Helmet>
 
         <div className={Styles.homeContent}>
