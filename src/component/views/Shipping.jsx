@@ -29,7 +29,7 @@ function Shipping() {
         <div className={styles.ShippingCard}>
           <h3 className={styles.titleAchat}>
             Mes achats
-            <span>(1)</span>
+            <span className={styles.numberAnnounceBasket}>(1)</span>
           </h3>
           <AnnoucementCard
             logo_small={linkedinSmall}

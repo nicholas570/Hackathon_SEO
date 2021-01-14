@@ -5,12 +5,26 @@
   width: 90%;
 }
 
+.numberAnnounceBasket {
+  font-weight: 300;
+}
+
 .descriptionCard {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   margin-left: 0.5rem;
   width: 100%;
+}
+
+.location,
+.expert,
+.company {
+  margin: 0.2rem;
+}
+
+.location {
+  font-weight: 300;
 }
 
 .price {
