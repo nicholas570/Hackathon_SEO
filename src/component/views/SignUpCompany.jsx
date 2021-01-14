@@ -72,7 +72,9 @@ const SignUpCompany = () => {
             />
           </div>
           <form className={Styles.signUpForm}>
-            <h2 className={Styles.signUpSecondTitle}>Inscription</h2>
+            <h2 className={Styles.signUpSecondTitle} onSubmit={handleSubmit}>
+              Inscription
+            </h2>
             <AppInput
               name="nom"
               label="Nom :"
@@ -126,12 +128,17 @@ const SignUpCompany = () => {
               onChange={handleChange}
             />
             <div className={Styles.signUpCheck}>
-              <input className={Styles.signUpCheckox} type="checkbox" />
+              <input
+                className={Styles.signUpCheckox}
+                type="checkbox"
+                onClick={handleCheck}
+              />
               <span>j&apos;accepte</span>
             </div>
             <AppButton
               title="Je me connecte"
               onClick={() => history.push('/annonces')}
+              isSubmit
             />
           </form>
         </div>
