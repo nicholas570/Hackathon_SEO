@@ -18,9 +18,10 @@ export default function AnnouncementDetailled({ announcement }) {
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_SERVER}/annonces/`, {
+      .get(`${process.env.REACT_APP_SERVER}/annonces`, {
         headers: {
-          Authorization: `bearer ${localStorage.getItem('TOKEN')}`,
+          authorization: `Bearer ${localStorage.getItem('TOKEN')}`,
+          'Access-Control-Allow-Origin': process.env.REACT_APP_SERVER,
         },
       })
       .then((res) => res.data)
