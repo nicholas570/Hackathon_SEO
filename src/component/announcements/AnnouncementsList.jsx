@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { history } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 import AnnouncementCard from './AnnouncementCard';
@@ -8,6 +8,7 @@ import styles from '../../css/AnnouncementsList.module.css';
 
 export default function AnnouncementsList({ search }) {
   const [announcements, setannouncements] = useState([]);
+  const history = useHistory();
 
   const fetchAnnouncements = async () => {
     try {
