@@ -8,6 +8,10 @@ import AppButton from '../common/app-button/AppButton';
 function Home() {
   const history = useHistory();
 
+  const redirect = () => {
+    history.push('/connexion');
+  };
+
   return (
     <section className={Styles.home}>
       <div className={Styles.homeBgImg}>
@@ -31,10 +35,7 @@ function Home() {
             title="Inscription entreprise"
             onClick={() => history.push('/inscription-entreprise')}
           />
-          <AppButton
-            title="Connexion"
-            onClick={() => history.push('/connexion')}
-          />
+          <AppButton title="Connexion" onClick={redirect} />
         </div>
       </div>
     </section>
