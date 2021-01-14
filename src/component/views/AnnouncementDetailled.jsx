@@ -7,18 +7,20 @@ import { Helmet } from 'react-helmet';
 import styles from '../../css/AnnouncementDetail.module.css';
 import doctolib from '../../Assets/Images/doctolib.png';
 import doctobig from '../../Assets/Images/doctobig.png';
-import { AnnoncesContext } from '../../Context/AnnoncesContext';
+import { AnnonceContext } from '../../Context/AnnonceContext';
 
-export default function AnnouncementDetailled({ announcement }) {
-  const { annonces, setAnnonces } = useContext(AnnoncesContext);
-  const handleAnnonces = () => {
-    setAnnonces([annonces]);
-  };
+export default function AnnouncementDetailled(announcement) {
+  const { annonce, setAnnonce } = useContext(AnnonceContext);
   const [annoucement, setAnnoucement] = useState([]);
 
+  const handleAnnonces = () => {
+    setAnnonce([...annonce, annoucement]);
+  };
+
   useEffect(() => {
+    console.log('ok');
     axios
-      .get(`${process.env.REACT_APP_SERVER}/annonces`, {
+      .get(`${process.env.REACT_APP_SERVER}/annonces/1`, {
         headers: {
           authorization: `Bearer ${localStorage.getItem('TOKEN')}`,
           'Access-Control-Allow-Origin': process.env.REACT_APP_SERVER,
@@ -57,7 +59,7 @@ export default function AnnouncementDetailled({ announcement }) {
         <title>Annonce Détaillée</title>
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
-      <div className={styles.annoucementDetailContainer}>
+      <div className={styles.annoceDetailContainer}>
         <div>
           <picture>
             <source srcSet={doctolib} media="(max-width: 768px)" />

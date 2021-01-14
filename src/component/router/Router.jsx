@@ -10,16 +10,16 @@ import Details from '../views/Details';
 import Shipping from '../views/Shipping';
 import NotFound from '../views/NotFound';
 
-import AnnouncementDetailled from '../AnnouncementDetailled/AnnouncementDetailled';
+import AnnouncementDetailled from '../views/AnnouncementDetailled';
 
 import SignIn from '../views/SignIn';
 import SignUpTrainee from '../views/SignUpTrainee';
 import SignUpCompany from '../views/SignUpCompany';
-import AnnoncesProvider from '../../Context/AnnoncesContext';
+import AnnonceProvider from '../../Context/AnnonceContext';
 
 function Router() {
   return (
-    <AnnoncesProvider>
+    <AnnonceProvider>
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home} />
@@ -60,9 +60,9 @@ function Router() {
             }}
           />
           <PrivateRoute
-            path="/annonces/:slug"
+            path="/annonces/:slug/:id"
             layout={DetailsLayout}
-            component={Details}
+            component={AnnouncementDetailled}
           />
           <PrivateRoute
             exact
@@ -72,7 +72,7 @@ function Router() {
           />
         </Switch>
       </BrowserRouter>
-    </AnnoncesProvider>
+    </AnnonceProvider>
   );
 }
 
