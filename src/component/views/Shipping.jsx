@@ -28,7 +28,7 @@ function Shipping() {
         <h2 className={styles.titleShipping}>Mon panier</h2>
         <div className={styles.ShippingCard}>
           <h3 className={styles.titleAchat}>
-            Mes achats
+            Mes achats&nbsp;
             <span className={styles.numberAnnounceBasket}>(1)</span>
           </h3>
           <AnnoucementCard

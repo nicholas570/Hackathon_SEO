@@ -5,10 +5,6 @@
   width: 90%;
 }
 
-.numberAnnounceBasket {
-  font-weight: 300;
-}
-
 .descriptionCard {
   display: flex;
   justify-content: space-between;
