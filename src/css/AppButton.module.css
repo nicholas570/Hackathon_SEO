@@ -1,0 +1,27 @@
+.appButton {
+  background-color: var(--cream-color);
+  color: #333;
+  width: 65%;
+  max-width: 20rem;
+  height: fit-content;
+  align-self: center;
+  border-radius: 0.5rem;
+  border-style: none;
+  outline: none;
+  padding: 1rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+  font-family: '';
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnIcon {
+  position: absolute;
+  right: 0;
+  height: 1.5rem;
+  margin-right: 1rem;
+}
