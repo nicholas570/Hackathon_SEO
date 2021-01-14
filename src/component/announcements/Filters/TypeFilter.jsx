@@ -1,15 +1,16 @@
 import React from 'react';
+import styles from '../../../css/AddFilter.module.css';
 
 export default function TypeFilter() {
   return (
-    <div>
-      Type :
+    <div className={styles.blocFilter}>
+      <p>Type :&nbsp;</p>
       <label htmlFor="stageType">
-        <input type="checkbox" id="stageType" name="StageIsChecked" />
+        <input type="radio" id="stageType" name="typeAnnouncement" />
         Stage
       </label>
       <label htmlFor="alternanceType">
-        <input type="checkbox" id="alternanceType" name="AlternanceIsChecked" />
+        <input type="radio" id="alternanceType" name="typeAnnouncement" />
         Alternance
       </label>
     </div>

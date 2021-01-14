@@ -1,5 +1,54 @@
 .filtersContainer {
-  position: absolute;
-  background-color: white;
+  width: 43rem;
   padding: 1rem;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: white;
+  border-bottom: 1px solid var(--light-grey-stroke);
+}
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: space-around;
+  justify-content: flex-start;
+}
+
+.blocFilter {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.5rem;
+  align-items: center;
+}
+
+.blocFilter > p {
+  font-weight: 500;
+}
+
+.blocFilter > label {
+  margin-right: 0.5rem;
+}
+
+.blocFilter > label > input {
+  margin: 0.2rem;
+}
+
+select {
+  padding: 0.2rem;
+  border-color: var(--light-grey-stroke);
+  border-radius: 3px;
+  font-size: 0.8rem;
+}
+
+.buttonFiltrate {
+  align-self: flex-end;
+  background-color: var(--cream-color);
+  border: 0;
+  padding: 0.5rem 2.5rem;
+  border-radius: 5px;
+}
+
+.buttonFiltrate:focus {
+  outline: 0;
 }

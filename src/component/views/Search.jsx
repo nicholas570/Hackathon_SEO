@@ -24,12 +24,14 @@ function Search() {
       <h2>Les annonces</h2>
       <Searchbar search={search} setSearch={setSearch} />
       <div
-        type="button"
+        className={filterView ? styles.filterButtonOn : styles.filterButtonOff}
+        role="button"
         onClick={() => {
           setFilterView(!filterView);
         }}
       >
-        Filtrer
+        <p>Filtrer</p>
+        <span className={styles.arrowFilter}>&#728;</span>
       </div>
       {filterView ? <AddFilter filterView={filterView} /> : ''}
       <AnnouncementsList search={search} />

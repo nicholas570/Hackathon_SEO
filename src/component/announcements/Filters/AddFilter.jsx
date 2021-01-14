@@ -10,13 +10,15 @@ import styles from '../../../css/AddFilter.module.css';
 export default function AddFilter() {
   return (
     <div className={styles.filtersContainer}>
-      <h3>Filtrer par :</h3>
-      <TypeFilter />
-      <PriceFilter />
-      <LocalisationFilter />
-      <StudiesFilter />
-      <LanguageFilter />
-      <ExpertiseFilter />
+      <div className={styles.filters}>
+        <TypeFilter />
+        <PriceFilter />
+        <LocalisationFilter />
+        <StudiesFilter />
+        <LanguageFilter />
+        <ExpertiseFilter />
+      </div>
+      <button className={styles.buttonFiltrate}>Filtrer</button>
     </div>
   );
 }
