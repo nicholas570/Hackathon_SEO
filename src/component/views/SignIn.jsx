@@ -57,6 +57,7 @@ const SignIn = () => {
               name="email"
               label="adresse email :"
               placeholder="email@email.com"
+              type="email"
               value={state.email}
               onChange={handleChange}
             />
@@ -64,6 +65,7 @@ const SignIn = () => {
               name="password"
               label="mot de passe :"
               placeholder="********"
+              type="password"
               value={state.password}
               onChange={handleChange}
             />
