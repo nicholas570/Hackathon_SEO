@@ -18,9 +18,6 @@ export default function AddFilter({ filters, setFilters }) {
         <LanguageFilter filters={filters} setFilters={setFilters} />
         <ExpertiseFilter />
       </div>
-      <button type="button" className={styles.buttonFiltrate}>
-        Filtrer
-      </button>
     </section>
   );
 }

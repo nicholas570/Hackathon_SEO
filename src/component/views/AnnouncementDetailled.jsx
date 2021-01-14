@@ -1,19 +1,54 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { Helmet } from 'react-helmet';
+import dayjs from 'dayjs';
+import advancedFormat from 'dayjs/plugin/advancedFormat';
+import fr from 'dayjs/locale/fr';
 
 import styles from '../../css/AnnouncementDetail.module.css';
 import doctolib from '../../Assets/Images/doctolib.png';
 import doctobig from '../../Assets/Images/doctobig.png';
 import { AnnoncesContext } from '../../Context/AnnoncesContext';
 
-export default function AnnouncementDetailled({ announcement }) {
+dayjs.extend(advancedFormat);
+dayjs.locale(fr);
+
+const AnnouncementDetailled = () => {
   const { annonces, setAnnonces } = useContext(AnnoncesContext);
+  const [annoucement, setAnnoucement] = useState([]);
+
   const handleAnnonces = () => {
-    setAnnonces([annonces, ...announcement]);
+    setAnnonces([...annonces, annoucement]);
   };
 
+  useEffect(() => {
+    console.log('ok');
+    axios
+      .get(`${process.env.REACT_APP_SERVER}/annonces/1`, {
+        headers: {
+          Authorization: `bearer ${localStorage.getItem('TOKEN')}`,
+        },
+      })
+      .then((res) => res.data)
+      .then((data) => {
+        console.log(data);
+        setAnnoucement(data.annonce);
+      })
+      .catch((err) => {
+        let message;
+        if (err.response.status === 401) {
+          message = "You're not authorized to access these datas";
+        } else {
+          message = err.response.data.errorMessage;
+        }
+        alert(message);
+        console.error(err);
+      });
+  }, []);
+
+  const date = dayjs(annoucement.debut).format('DD/MM/YYYY');
   return (
     <>
       <Helmet>
@@ -35,44 +70,37 @@ export default function AnnouncementDetailled({ announcement }) {
           <picture>
             <source srcSet={doctolib} media="(max-width: 768px)" />
             <img
-              src={doctobig}
-              alt={announcement.name}
+              src={annoucement.logo}
+              alt={annoucement.name}
               className={styles.annonceDetailLogo}
             />
           </picture>
 
           <div className={styles.annonceDetailInfo}>
             <div className={styles.annonceDetailEnt}>
-              <h3>{announcement.name}</h3>
-              <p>{announcement.expertise}</p>
-              <p>{announcement.langage}</p>
+              <h3>{annoucement.name}</h3>
+              <p>{annoucement.expertise}</p>
+              <p>{annoucement.langage}</p>
             </div>
             <div className={styles.annonceDetailStage}>
-              <p>{announcement.localisation}</p>
-              <p>{announcement.duree}</p>
-              <p className={styles.annonceDetailDebut}>{announcement.debut}</p>
+              <p>{annoucement.localisation}</p>
+              <p>{annoucement.duree}</p>
+              <p className={styles.annonceDetailDebut}>{date}</p>
             </div>
           </div>
           <div className={styles.annonceDetailDesription}>
             <h3 className={styles.annonceDetailDesriptionTitle}>Description</h3>
             <p className={styles.annonceDetailText}>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quis
-              maxime neque, laboriosam magnam assumenda fugit aliquid minus
-              asperiores doloremque dolorem alias nihil provident. Quos,
-              similique neque. Eius mollitia dolores tenetur. Lorem ipsum dolor
-              sit amet consectetur, adipisicing elit. Placeat, sed enim tempore
-              eum sunt perspiciatis saepe voluptas dicta similique ducimus
-              necessitatibus itaque suscipit harum impedit quas delectus,
-              repudiandae fugit ab.
+              {annoucement.description}
             </p>
           </div>
           <div className={styles.annonceDetailPrixContener}>
             <button
               className={styles.annonceDetailPrix}
               type="button"
-              onClick={handleAnnonces}
+              onClick={() => handleAnnonces()}
             >
-              {announcement.prix}
+              {annoucement.prix}
             </button>
             <FontAwesomeIcon
               className={styles.annonceDetailCart}
@@ -83,4 +111,6 @@ export default function AnnouncementDetailled({ announcement }) {
       </div>
     </>
   );
-}
+};
+
+export default AnnouncementDetailled;
