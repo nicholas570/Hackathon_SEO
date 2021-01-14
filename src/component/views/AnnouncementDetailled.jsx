@@ -1,25 +1,31 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { Helmet } from 'react-helmet';
+import dayjs from 'dayjs';
+import advancedFormat from 'dayjs/plugin/advancedFormat';
+import fr from 'dayjs/locale/fr';
 
 import styles from '../../css/AnnouncementDetail.module.css';
-import doctobig from '../../Assets/Images/doctobig.png';
 import { AnnonceContext } from '../../Context/AnnonceContext';
 
-export default function AnnouncementDetailled(announcement) {
+dayjs.extend(advancedFormat);
+dayjs.locale(fr);
+
+export default function AnnouncementDetaille() {
   const { annonce, setAnnonce } = useContext(AnnonceContext);
   const [annoucement, setAnnoucement] = useState([]);
-
+  const { id } = useParams();
   const handleAnnonces = () => {
-    setAnnonce([...annonce, annoucement]);
+    const set1 = new Set([]);
+    setAnnonce([...set1, annoucement]);
   };
 
   useEffect(() => {
-    console.log('ok');
     axios
-      .get(`${process.env.REACT_APP_SERVER}/annonces/1`, {
+      .get(`${process.env.REACT_APP_SERVER}/annonces/${id}`, {
         headers: {
           authorization: `Bearer ${localStorage.getItem('TOKEN')}`,
           'Access-Control-Allow-Origin': process.env.REACT_APP_SERVER,
@@ -42,6 +48,7 @@ export default function AnnouncementDetailled(announcement) {
       });
   }, []);
 
+  const date = dayjs(annoucement.debut).format('DD/MM/YYYY');
   return (
     <>
       <Helmet>
@@ -81,7 +88,7 @@ export default function AnnouncementDetailled(announcement) {
             <div className={styles.annonceDetailStage}>
               <p>{annoucement.localisation}</p>
               <p>{annoucement.duree}</p>
-              <p className={styles.annonceDetailDebut}>{annoucement.debut}</p>
+              <p className={styles.annonceDetailDebut}>{date}</p>
             </div>
           </div>
           <div className={styles.annonceDetailDesription}>
