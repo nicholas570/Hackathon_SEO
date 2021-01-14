@@ -15,7 +15,7 @@ const SignUpTrainee = () => {
             <p className={Styles.signUpDescription}>Lorem lorem lorem</p>
           </div>
           <form className={Styles.signUpForm}>
-            <h2 className={Styles.signUpSecondTitle}>Connexion</h2>
+            <h2 className={Styles.signUpSecondTitle}>Inscription</h2>
 
             <AppInput label="Prénom :" placeholder="********" />
             <AppInput label="Nom :" placeholder="********" />
