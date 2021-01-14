@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
@@ -8,27 +9,26 @@ import advancedFormat from 'dayjs/plugin/advancedFormat';
 import fr from 'dayjs/locale/fr';
 
 import styles from '../../css/AnnouncementDetail.module.css';
-import doctolib from '../../Assets/Images/doctolib.png';
-import doctobig from '../../Assets/Images/doctobig.png';
-import { AnnoncesContext } from '../../Context/AnnoncesContext';
+import { AnnonceContext } from '../../Context/AnnonceContext';
 
 dayjs.extend(advancedFormat);
 dayjs.locale(fr);
 
-const AnnouncementDetailled = () => {
-  const { annonces, setAnnonces } = useContext(AnnoncesContext);
+export default function AnnouncementDetaille() {
+  const { annonce, setAnnonce } = useContext(AnnonceContext);
   const [annoucement, setAnnoucement] = useState([]);
-
+  const { id } = useParams();
   const handleAnnonces = () => {
-    setAnnonces([...annonces, annoucement]);
+    const set1 = new Set([]);
+    setAnnonce([...set1, annoucement]);
   };
 
   useEffect(() => {
-    console.log('ok');
     axios
-      .get(`${process.env.REACT_APP_SERVER}/annonces/1`, {
+      .get(`${process.env.REACT_APP_SERVER}/annonces/${id}`, {
         headers: {
-          Authorization: `bearer ${localStorage.getItem('TOKEN')}`,
+          authorization: `Bearer ${localStorage.getItem('TOKEN')}`,
+          'Access-Control-Allow-Origin': process.env.REACT_APP_SERVER,
         },
       })
       .then((res) => res.data)
@@ -65,10 +65,13 @@ const AnnouncementDetailled = () => {
         <title>Annonce Détaillée</title>
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
-      <div className={styles.annoucementDetailContainer}>
+      <div className={styles.annonceDetailContainer}>
         <div>
           <picture>
-            <source srcSet={doctolib} media="(max-width: 768px)" />
+            <source
+              srcSet={annoucement.logo_small}
+              media="(max-width: 768px)"
+            />
             <img
               src={annoucement.logo}
               alt={annoucement.name}
@@ -78,7 +81,7 @@ const AnnouncementDetailled = () => {
 
           <div className={styles.annonceDetailInfo}>
             <div className={styles.annonceDetailEnt}>
-              <h3>{annoucement.name}</h3>
+              <h3>{annoucement.nom}</h3>
               <p>{annoucement.expertise}</p>
               <p>{annoucement.langage}</p>
             </div>
@@ -111,6 +114,4 @@ const AnnouncementDetailled = () => {
       </div>
     </>
   );
-};
-
-export default AnnouncementDetailled;
+}

@@ -14,11 +14,11 @@ import AnnouncementDetailled from '../views/AnnouncementDetailled';
 import SignIn from '../views/SignIn';
 import SignUpTrainee from '../views/SignUpTrainee';
 import SignUpCompany from '../views/SignUpCompany';
-import AnnoncesProvider from '../../Context/AnnoncesContext';
+import AnnonceProvider from '../../Context/AnnonceContext';
 
 function Router() {
   return (
-    <AnnoncesProvider>
+    <AnnonceProvider>
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home} />
@@ -57,7 +57,7 @@ function Router() {
           />
         </Switch>
       </BrowserRouter>
-    </AnnoncesProvider>
+    </AnnonceProvider>
   );
 }
 
