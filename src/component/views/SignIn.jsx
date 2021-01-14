@@ -1,10 +1,12 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 import Styles from '../../css/SignIn.module.css';
 import AppButton from '../common/app-button/AppButton';
 import AppInput from '../common/app-input/AppInput';
 
 const SignIn = () => {
+  const history = useHistory();
   return (
     <section className={Styles.signIn}>
       <div className={Styles.signInBgImg}>
@@ -15,13 +17,13 @@ const SignIn = () => {
           </div>
           <form className={Styles.signInForm}>
             <h2 className={Styles.signInSecondTitle}>Connexion</h2>
-            <br />
             <AppInput label="adresse email :" placeholder="email@email.com" />
             <AppInput label="mot de passe :" placeholder="********" />
             <p className={Styles.signInForgot}>mot de passe oublié ?</p>
-            <br />
-            <AppButton title="Je me connecte" />
-            <br />
+            <AppButton
+              title="Je me connecte"
+              onClick={() => history.push('/annonces')}
+            />
           </form>
         </div>
       </div>

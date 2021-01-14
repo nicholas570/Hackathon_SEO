@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 import AppButton from '../common/app-button/AppButton';
 import AppInput from '../common/app-input/AppInput';
@@ -6,6 +7,7 @@ import AppInput from '../common/app-input/AppInput';
 import Styles from '../../css/SignUp.module.css';
 
 const SignUpTrainee = () => {
+  const history = useHistory();
   return (
     <section className={Styles.signUp}>
       <div className={Styles.signUpBgImg}>
@@ -26,7 +28,10 @@ const SignUpTrainee = () => {
               <input className={Styles.signUpCheckox} type="checkbox" />
               <span>j&apos;accepte</span>
             </div>
-            <AppButton title="Je me connecte" />
+            <AppButton
+              title="Je me connecte"
+              onClick={() => history.push('/annonces')}
+            />
           </form>
         </div>
       </div>
