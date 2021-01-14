@@ -1,14 +1,14 @@
 .appButton {
   background-color: var(--cream-color);
   color: #333;
-  width: 65%;
+  width: 80%;
   max-width: 20rem;
   height: fit-content;
   align-self: center;
   border-radius: 0.5rem;
   border-style: none;
   outline: none;
-  padding: 1rem;
+  padding: 0.5rem;
   margin: 1rem;
   font-size: 1.5rem;
   font-family: '';
