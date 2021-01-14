@@ -24,7 +24,7 @@ function Shipping() {
         <title>Panier</title>
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
-      <section>
+      <main>
         <h2 className={styles.titleShipping}>Mon panier</h2>
         <div className={styles.ShippingCard}>
           <h3 className={styles.titleAchat}>
@@ -60,7 +60,7 @@ function Shipping() {
             />
           </section>
         </div>
-      </section>
+      </main>
     </div>
   );
 }

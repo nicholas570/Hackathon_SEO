@@ -1,6 +1,7 @@
 import React from 'react';
 
 import style from './AnnoucementCard.module.css';
+import announcementPropType from '../../prop-types/AnnouncementPropTypes';
 
 const AnnoucementCard = ({
   logo_small,
@@ -25,3 +26,5 @@ const AnnoucementCard = ({
 };
 
 export default AnnoucementCard;
+
+AnnoucementCard.propTypes = announcementPropType;
