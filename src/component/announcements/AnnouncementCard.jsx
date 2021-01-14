@@ -7,6 +7,7 @@ export default function AnnouncementCard({ announcement }) {
   const {
     logo_small,
     nom,
+    langage,
     expertise,
     localisation,
     slug,
@@ -18,7 +19,9 @@ export default function AnnouncementCard({ announcement }) {
       <img className={styles.cardImage} src={logo_small} alt="logo" />
       <div className={styles.cardDescription}>
         <h3>{nom}</h3>
-        <h4>{expertise}</h4>
+        <h4>
+          {expertise}&nbsp;({langage})
+        </h4>
         <p>{localisation}</p>
       </div>
       <button className={styles.cardButton} type="button">
