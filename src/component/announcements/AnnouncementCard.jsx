@@ -16,6 +16,7 @@ export default function AnnouncementCard({ announcement }) {
         <p>{announcement.localisation}</p>
       </div>
       <button className={styles.cardButton} type="button">
+
         {`${announcement.prix}€`}
       </button>
     </div>
