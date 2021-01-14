@@ -28,7 +28,7 @@ function Router() {
           component={Shipping}
         />
         <PrivateRoute
-          path="/benoit"
+          path="/annonces/details"
           layout={DetailsLayout}
           component={() => {
             const annonce = {
