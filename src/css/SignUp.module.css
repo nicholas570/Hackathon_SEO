@@ -59,13 +59,16 @@
 }
 
 .signUpCheck {
-  width: 65%;
+  width: 80%;
 }
 
 .signUpCheckox {
   margin: 1rem 1rem 1rem 0;
 }
 
+.signUpGrpButton{
+  display: none;
+}
 @media screen and (min-width: 768px) {
   .signUp{
   height: 100vh;
@@ -85,7 +88,12 @@
 right: 4%;
 width: 40%;
 margin: auto 0;
-
 }
-
+.signUpGrpButton{
+display: block;
+width: 20rem;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
 }
