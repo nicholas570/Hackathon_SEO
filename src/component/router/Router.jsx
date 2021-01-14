@@ -18,9 +18,9 @@ function Router() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/connexion" component={SignIn} />
-        <Route exact path="/inscription/stagiaire" component={SignUpTrainee} />
-        <Route exact path="/inscription/entreprise" component={SignUpCompany} />
+        <Route exact path="/Connexion" component={SignIn} />
+        <Route exact path="/inscription-stagiaire" component={SignUpTrainee} />
+        <Route exact path="/inscription-entreprise" component={SignUpCompany} />
         <PrivateRoute
           exact
           path="/annonces"
