@@ -1,0 +1,63 @@
+.cardContainer {
+  background-color: var(--light-grey-background);
+  border: 1px solid var(--light-grey-stroke);
+  height: 200px;
+  width: 134px;
+  border-radius: 5px;
+  margin: 0.9rem 0.7rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardImage {
+  border-radius: 5px 5px 0px 0px;
+  width: 100%;
+}
+.cardDescription {
+  margin-top: 0.8rem;
+  line-height: 1.1rem;
+  padding: 0 0.5rem;
+  height: 90%
+}
+
+.cardDescription > h3 {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.cardDescription > h4 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.cardDescription > p {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.cardButton {
+  background-color: var(--cream-color);
+  border: none;
+  margin: 1rem;
+  padding: 0.3rem;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.cardButton:focus {
+  outline: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .cardContainer {
+    height: 256px;
+    width: 190px;
+    margin: 2rem 1.1rem;
+  }
+
+  .cardDescription {
+    margin-top: 1rem;
+    line-height: 1.4rem;
+  }
+}
