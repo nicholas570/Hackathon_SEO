@@ -23,4 +23,7 @@
   .brand {
     margin: auto;
   }
+  .container {
+    padding: 25px;
+  }
 }
