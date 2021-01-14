@@ -8,6 +8,7 @@ import AddFilter from '../announcements/Filters/AddFilter';
 function Search() {
   const [search, setSearch] = useState('');
   const [filterView, setFilterView] = useState(false);
+  const [filters, setFilters] = useState({});
   return (
     <div className={styles.announcementsPage}>
       <Helmet>
@@ -21,20 +22,32 @@ function Search() {
         <title>Annonces</title>
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
-      <h2>Les annonces</h2>
-      <Searchbar search={search} setSearch={setSearch} />
-      <div
-        className={filterView ? styles.filterButtonOn : styles.filterButtonOff}
-        role="button"
-        onClick={() => {
-          setFilterView(!filterView);
-        }}
-      >
-        <p>Filtrer</p>
-        <span className={styles.arrowFilter}>&#728;</span>
-      </div>
-      {filterView ? <AddFilter filterView={filterView} /> : ''}
-      <AnnouncementsList search={search} />
+      <main>
+        <h2>Les annonces</h2>
+        <Searchbar search={search} setSearch={setSearch} />
+        <div
+          className={
+            filterView ? styles.filterButtonOn : styles.filterButtonOff
+          }
+          role="button"
+          onClick={() => {
+            setFilterView(!filterView);
+          }}
+        >
+          <p>Filtrer</p>
+          <span className={styles.arrowFilter}>&#728;</span>
+        </div>
+        {filterView ? (
+          <AddFilter
+            filterView={filterView}
+            filters={filters}
+            setFilters={setFilters}
+          />
+        ) : (
+          ''
+        )}
+        <AnnouncementsList search={search} />
+      </main>
     </div>
   );
 }

@@ -4,7 +4,7 @@ import styles from '../../css/Searchbar.module.css';
 
 export default function Searchbar({ search, setSearch }) {
   return (
-    <div className={styles.searchbar}>
+    <section className={styles.searchbar}>
       <input
         className={styles.searchbarContent}
         type="text"
@@ -14,7 +14,7 @@ export default function Searchbar({ search, setSearch }) {
           setSearch(e.target.value);
         }}
       />
-    </div>
+    </section>
   );
 }
 
