@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { Helmet } from 'react-helmet';
@@ -13,6 +14,31 @@ export default function AnnouncementDetailled({ announcement }) {
   const handleAnnonces = () => {
     setAnnonces([annonces, ...announcement]);
   };
+  const [annoucement, setAnnoucement] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_SERVER_ADDRESS}/annonces/:slug`, {
+        headers: {
+          Authorization: `bearer ${localStorage.getItem('TOKEN')}`,
+        },
+      })
+      .then((res) => res.data)
+      .then((data) => {
+        console.log(data);
+        setAnnoucement(data);
+      })
+      .catch((err) => {
+        let message;
+        if (err.response.status === 401) {
+          message = "You're not authorized to access these datas";
+        } else {
+          message = err.response.data.errorMessage;
+        }
+        alert(message);
+        console.error(err);
+      });
+  }, []);
 
   return (
     <>

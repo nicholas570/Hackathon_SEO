@@ -22,6 +22,8 @@
     "class-methods-use-this": "off",
      "no-unused-vars": "off",
      "react/prop-types": "off",
+    "camelcase": "off",
+    "import/prefer-default-export": "off",
     "react/jsx-props-no-spreading": [
       2,
       {

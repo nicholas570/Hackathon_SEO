@@ -1,13 +1,6 @@
 .announcementsContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  max-width: 43.75rem;
-}
-
-@media screen and (min-width: 768px) {
-  .announcementsContainer {
-    margin: 5rem auto;
-  }
 }
