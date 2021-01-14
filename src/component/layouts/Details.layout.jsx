@@ -1,18 +1,14 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faShoppingCart,
-  faArrowCircleLeft,
-} from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+
+import Return from '../common/Return';
 
 import style from '../../css/HeaderAndFooter.module.css';
 
 function DetailsLayout({ children }) {
-  const history = useHistory();
-
   return (
     <>
       <header className={style.header}>
@@ -27,14 +23,7 @@ function DetailsLayout({ children }) {
       <section className={style.container}>{children}</section>
 
       <footer className={style.container}>
-        <section>
-          <FontAwesomeIcon
-            icon={faArrowCircleLeft}
-            className={style.arrow}
-            onClick={() => history.push('/annonces')}
-          />
-          Retour aux annonces
-        </section>
+        <Return path="/annonces" />
       </footer>
     </>
   );
