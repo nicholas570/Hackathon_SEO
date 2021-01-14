@@ -9,6 +9,7 @@ import PrivateRoute from './PrivateRoute';
 import Details from '../views/Details';
 import Shipping from '../views/Shipping';
 import NotFound from '../views/NotFound';
+import AnnouncementDetailled from '../AnnouncementDetailled/AnnouncementDetailled';
 
 function Router() {
   return (
@@ -25,6 +26,20 @@ function Router() {
           path="/panier"
           layout={DetailsLayout}
           component={Shipping}
+        />
+        <PrivateRoute
+          path="/benoit"
+          layout={DetailsLayout}
+          component={() => {
+            const annonce = {
+              name: 'Linkedin',
+              prix: '50€',
+              localisation: 'Paris',
+              expertise: 'Full Stack',
+              logoSmall: 'logo',
+            };
+            return <AnnouncementDetailled announcement={annonce} />;
+          }}
         />
         <PrivateRoute
           path="/annonces/:slug"

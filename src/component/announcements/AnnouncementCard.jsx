@@ -14,7 +14,9 @@ export default function AnnouncementCard({ announcement }) {
         <h4>{announcement.expertise}</h4>
         <p>{announcement.localisation}</p>
       </div>
-      <button className={styles.cardButton} type="button">{announcement.prix}</button>
+      <button className={styles.cardButton} type="button">
+        {announcement.prix}
+      </button>
     </div>
   );
 }
