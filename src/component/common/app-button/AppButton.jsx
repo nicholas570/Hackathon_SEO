@@ -8,10 +8,9 @@ function AppButton(props) {
   return (
     <button
       className={`${styles.appButton} ${disabled && styles.btnDisabled}`}
-      // eslint-disable-next-line react/button-has-type
       type={isSubmit ? 'submit' : 'button'}
       disabled={disabled}
-      onClick={() => onClick()}
+      onClick={onClick}
     >
       {srcImg && <img className={styles.btnIcon} src={srcImg} alt={altImg} />}
       {title}
@@ -24,6 +23,7 @@ AppButton.defaultProps = {
   altImg: null,
   isSubmit: false,
   disabled: false,
+  onClick: null,
 };
 
 AppButton.propTypes = {
@@ -32,7 +32,7 @@ AppButton.propTypes = {
   altImg: PropTypes.string,
   isSubmit: PropTypes.bool,
   disabled: PropTypes.bool,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
 };
 
 export default AppButton;
