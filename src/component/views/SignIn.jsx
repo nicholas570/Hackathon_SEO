@@ -1,12 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 import Styles from '../../css/SignIn.module.css';
 import AppButton from '../common/app-button/AppButton';
 import AppInput from '../common/app-input/AppInput';
 
 const SignIn = () => {
+  const [state, setState] = useState({ email: '', password: '' });
   const history = useHistory();
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setState({
+      ...state,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post('http://localhost:8080/login', state)
+      .then(({ data }) => {
+        localStorage.setItem('TOKEN', data.token);
+        localStorage.setItem('USER', JSON.stringify(data.user));
+        history.push('/annonces');
+      })
+      .catch((err) => {
+        alert(err.response.data);
+      });
+  };
+
   return (
     <section className={Styles.signIn}>
       <div className={Styles.signInBgImg}>
@@ -25,15 +51,24 @@ const SignIn = () => {
               onClick={() => history.push('/inscription-entreprise')}
             />
           </div>
-          <form className={Styles.signInForm}>
+          <form className={Styles.signInForm} onSubmit={handleSubmit}>
             <h2 className={Styles.signInSecondTitle}>Connexion</h2>
-            <AppInput label="adresse email :" placeholder="email@email.com" />
-            <AppInput label="mot de passe :" placeholder="********" />
-            <p className={Styles.signInForgot}>mot de passe oublié ?</p>
-            <AppButton
-              title="Je me connecte"
-              onClick={() => history.push('/annonces')}
+            <AppInput
+              name="email"
+              label="adresse email :"
+              placeholder="email@email.com"
+              value={state.email}
+              onChange={handleChange}
             />
+            <AppInput
+              name="password"
+              label="mot de passe :"
+              placeholder="********"
+              value={state.password}
+              onChange={handleChange}
+            />
+            <p className={Styles.signInForgot}>mot de passe oublié ?</p>
+            <AppButton type="submit" title="Je me connecte" isSubmit />
           </form>
         </div>
       </div>
