@@ -1,6 +1,7 @@
 .signIn {
   width: 100vw;
   height: 100vh;
+  background-color: var(--cream-color);
 }
 
 .signInBgImg {
@@ -60,4 +61,30 @@
   font-size: 0.75rem;
   width: 65%;
   text-align: right;
+}
+
+.signInGrpButton{
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+.signInBgImg{
+  width: 50%;
+}
+
+.signInForm{
+  position: absolute;
+  margin: auto 0;
+  right: 4%;
+  width: 40%;
+}
+
+.signInGrpButton {
+  display: block;
+  width: 20rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 }
