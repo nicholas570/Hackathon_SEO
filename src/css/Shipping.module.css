@@ -1,0 +1,53 @@
+.ContainerShipping {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.titleShipping {
+  margin: 2rem 0;
+}
+
+.titleAchat {
+  margin: 2rem 0;
+}
+
+.ShippingCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  max-width: 40rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--light-grey-background);
+}
+
+.wrapperAllPayement {
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  margin: 1rem;
+}
+
+.descritionPrice {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.descritionPriceSpan {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .ShippingCard {
+    height: 50vh;
+    padding: 1rem;
+    width: 60vw;
+  }
+}
