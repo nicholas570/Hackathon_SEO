@@ -3,9 +3,11 @@ import { Helmet } from 'react-helmet';
 import AnnouncementsList from '../announcements/AnnouncementsList';
 import Searchbar from '../announcements/Searchbar';
 import styles from '../../css/Search.module.css';
+import AddFilter from '../announcements/Filters/AddFilter';
 
 function Search() {
   const [search, setSearch] = useState('');
+  const [filterView, setFilterView] = useState(false);
   return (
     <div className={styles.announcementsPage}>
       <Helmet>
@@ -21,6 +23,15 @@ function Search() {
       </Helmet>
       <h2>Les annonces</h2>
       <Searchbar search={search} setSearch={setSearch} />
+      <div
+        type="button"
+        onClick={() => {
+          setFilterView(!filterView);
+        }}
+      >
+        Filtrer
+      </div>
+      {filterView ? <AddFilter filterView={filterView} /> : ''}
       <AnnouncementsList search={search} />
     </div>
   );
