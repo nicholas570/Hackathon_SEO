@@ -8,7 +8,6 @@ import AddFilter from '../announcements/Filters/AddFilter';
 function Search() {
   const [search, setSearch] = useState('');
   const [filterView, setFilterView] = useState(false);
-  const [filters, setFilters] = useState({});
   return (
     <div className={styles.announcementsPage}>
       <Helmet>
@@ -37,15 +36,7 @@ function Search() {
           <p>Filtrer</p>
           <span className={styles.arrowFilter}>&#728;</span>
         </div>
-        {filterView ? (
-          <AddFilter
-            filterView={filterView}
-            filters={filters}
-            setFilters={setFilters}
-          />
-        ) : (
-          ''
-        )}
+        {filterView ? <AddFilter filterView={filterView} /> : ''}
         <AnnouncementsList search={search} />
       </main>
     </div>

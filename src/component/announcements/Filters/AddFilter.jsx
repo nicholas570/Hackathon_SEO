@@ -7,7 +7,7 @@ import StudiesFilter from './StudiesFilter';
 import TypeFilter from './TypeFilter';
 import styles from '../../../css/AddFilter.module.css';
 
-export default function AddFilter({ setFilters }) {
+export default function AddFilter() {
   return (
     <section className={styles.filtersContainer}>
       <div className={styles.filters}>
@@ -18,11 +18,7 @@ export default function AddFilter({ setFilters }) {
         <LanguageFilter />
         <ExpertiseFilter />
       </div>
-      <button
-        onClick={() => setFilters('')}
-        type="button"
-        className={styles.buttonFiltrate}
-      >
+      <button type="button" className={styles.buttonFiltrate}>
         Filtrer
       </button>
     </section>
