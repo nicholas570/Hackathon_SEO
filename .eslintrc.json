@@ -20,6 +20,8 @@
     "react/jsx-no-bind": [1, { "allowArrowFunctions": true }],
     "react/react-in-jsx-scope": "off",
     "class-methods-use-this": "off",
+    "camelcase": "off",
+    "import/prefer-default-export": "off",
     "react/jsx-props-no-spreading": [
       2,
       {
