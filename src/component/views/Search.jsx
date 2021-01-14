@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import AnnouncementsList from '../announcements/AnnouncementsList';
 
 function Search() {
   return (
@@ -16,6 +17,7 @@ function Search() {
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       La recherche
+      <AnnouncementsList />
     </div>
   );
 }
