@@ -10,9 +10,6 @@ export default function LanguageFilter({ filters, setFilters }) {
         id="language-select"
         onChange={(e) => setFilters({ [e.target.name]: e.target.value })}
       >
-        <option name="langage" value="defaultLanguage">
-          Choisir un langage
-        </option>
         <option name="langage" value="Java">
           Java
         </option>
