@@ -60,9 +60,9 @@ function Router() {
             }}
           />
           <PrivateRoute
-            path="/annonces/:slug"
+            path="/annonces/:slug/:id"
             layout={DetailsLayout}
-            component={Details}
+            component={AnnouncementDetailled}
           />
           <PrivateRoute
             exact

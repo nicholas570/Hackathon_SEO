@@ -11,14 +11,16 @@ import { AnnoncesContext } from '../../Context/AnnoncesContext';
 
 export default function AnnouncementDetailled({ announcement }) {
   const { annonces, setAnnonces } = useContext(AnnoncesContext);
-  const handleAnnonces = () => {
-    setAnnonces([annonces]);
-  };
   const [annoucement, setAnnoucement] = useState([]);
 
+  const handleAnnonces = () => {
+    setAnnonces([...annonces, annoucement]);
+  };
+
   useEffect(() => {
+    console.log('ok');
     axios
-      .get(`${process.env.REACT_APP_SERVER}/annonces/`, {
+      .get(`${process.env.REACT_APP_SERVER}/annonces/1`, {
         headers: {
           Authorization: `bearer ${localStorage.getItem('TOKEN')}`,
         },
