@@ -1,0 +1,10 @@
+.announcementsPage {
+  max-width: 45.75rem;
+  margin: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .announcementsPage {
+    margin: 0 auto;
+  }
+}

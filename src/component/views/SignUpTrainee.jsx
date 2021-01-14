@@ -16,11 +16,21 @@ const SignUpTrainee = () => {
             <h1 className={Styles.signUpTitle}>Paye ton stage</h1>
             <p className={Styles.signUpDescription}>Lorem lorem lorem</p>
           </div>
+          <div className={Styles.signUpGrpButton}>
+            <AppButton
+              title="Connexion"
+              onClick={() => history.push('/connexion')}
+            />
+            <AppButton
+              title="Inscription entreprise"
+              onClick={() => history.push('/inscription-entreprise')}
+            />
+          </div>
           <form className={Styles.signUpForm}>
             <h2 className={Styles.signUpSecondTitle}>Inscription</h2>
 
-            <AppInput label="Prénom :" placeholder="********" />
-            <AppInput label="Nom :" placeholder="********" />
+            <AppInput label="Prénom :" placeholder="John" />
+            <AppInput label="Nom :" placeholder="Doe" />
             <AppInput label="Adresse email :" placeholder="email@email.com" />
             <AppInput label="mot de passe :" placeholder="********" />
             <AppInput label="mot de passe :" placeholder="********" />

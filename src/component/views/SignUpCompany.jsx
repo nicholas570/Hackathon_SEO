@@ -16,9 +16,18 @@ const SignUpCompany = () => {
             <h1 className={Styles.signUpTitle}>Paye ton stage</h1>
             <p className={Styles.signUpDescription}>Lorem lorem lorem</p>
           </div>
+          <div className={Styles.signUpGrpButton}>
+            <AppButton
+              title="Connexion"
+              onClick={() => history.push('/connexion')}
+            />
+            <AppButton
+              title="Inscription stagiaire"
+              onClick={() => history.push('/inscription-stagiaire')}
+            />
+          </div>
           <form className={Styles.signUpForm}>
             <h2 className={Styles.signUpSecondTitle}>Inscription</h2>
-
             <AppInput label="Nom :" placeholder="société" />
             <AppInput label="Adresse :" placeholder="10 rue du stage" />
             <AppInput label="Adresse email :" placeholder="email@email.com" />

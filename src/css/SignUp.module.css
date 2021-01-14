@@ -1,6 +1,7 @@
 .signUp{
   width: 100%;
   height: 100%;
+  background-color: var(--cream-color);
 }
 
 .signUpBgImg {
@@ -58,9 +59,41 @@
 }
 
 .signUpCheck {
-  width: 65%;
+  width: 80%;
 }
 
 .signUpCheckox {
   margin: 1rem 1rem 1rem 0;
+}
+
+.signUpGrpButton{
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .signUp{
+  height: 100vh;
+  }
+
+  .signUpBgImg {
+  width: 50%;
+  height: 100vh;
+}
+
+.signUpContent{
+  padding-bottom: 0;
+}
+
+.signUpForm {
+  position: absolute;
+right: 4%;
+width: 40%;
+margin: auto 0;
+}
+.signUpGrpButton{
+display: block;
+width: 20rem;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
 }

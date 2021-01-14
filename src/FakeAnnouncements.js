@@ -3,28 +3,28 @@ import appleSmall from './Assets/Images/apple-small.png';
 
 const FakeAnnouncements = [
   {
-    name: 'Linkedin',
+    nom: 'Linkedin',
     prix: '50€',
     localisation: 'Paris',
     expertise: 'Full Stack',
     logoSmall: linkedinSmall,
   },
   {
-    name: 'Apple',
+    nom: 'Apple',
     prix: '100€',
     localisation: 'Nantes',
     expertise: 'Back End',
     logoSmall: appleSmall,
   },
   {
-    name: 'Linkedin',
+    nom: 'Linkedin',
     prix: '50€',
     localisation: 'Paris',
     expertise: 'Full Stack',
     logoSmall: linkedinSmall,
   },
   {
-    name: 'Apple',
+    nom: 'Apple',
     prix: '100€',
     localisation: 'Nantes',
     expertise: 'Back End',
