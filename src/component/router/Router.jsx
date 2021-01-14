@@ -42,7 +42,7 @@ function Router() {
           component={() => {
             const annonce = {
               name: 'Linkedin',
-              prix: '50€',
+              prix: '50',
               localisation: 'Paris',
               expertise: 'Full Stack',
               logoSmall: 'logo',
