@@ -3,11 +3,17 @@ import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { Helmet } from 'react-helmet';
+import dayjs from 'dayjs';
+import advancedFormat from 'dayjs/plugin/advancedFormat';
+import fr from 'dayjs/locale/fr';
 
 import styles from '../../css/AnnouncementDetail.module.css';
 import doctolib from '../../Assets/Images/doctolib.png';
 import doctobig from '../../Assets/Images/doctobig.png';
 import { AnnoncesContext } from '../../Context/AnnoncesContext';
+
+dayjs.extend(advancedFormat);
+dayjs.locale(fr);
 
 const AnnouncementDetailled = () => {
   const { annonces, setAnnonces } = useContext(AnnoncesContext);
@@ -42,6 +48,7 @@ const AnnouncementDetailled = () => {
       });
   }, []);
 
+  const date = dayjs(annoucement.debut).format('DD/MM/YYYY');
   return (
     <>
       <Helmet>
@@ -78,7 +85,7 @@ const AnnouncementDetailled = () => {
             <div className={styles.annonceDetailStage}>
               <p>{annoucement.localisation}</p>
               <p>{annoucement.duree}</p>
-              <p className={styles.annonceDetailDebut}>{annoucement.debut}</p>
+              <p className={styles.annonceDetailDebut}>{date}</p>
             </div>
           </div>
           <div className={styles.annonceDetailDesription}>
