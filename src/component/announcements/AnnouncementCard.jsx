@@ -12,11 +12,12 @@ export default function AnnouncementCard({ announcement }) {
       />
       <div className={styles.cardDescription}>
         <h3>{announcement.nom}</h3>
-        <h4>{announcement.expertise}</h4>
+        <h4>
+          {announcement.expertise} ({announcement.langage})
+        </h4>
         <p>{announcement.localisation}</p>
       </div>
       <button className={styles.cardButton} type="button">
-
         {`${announcement.prix}€`}
       </button>
     </div>

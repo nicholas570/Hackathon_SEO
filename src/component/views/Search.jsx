@@ -7,6 +7,7 @@ import AddFilter from '../announcements/Filters/AddFilter';
 
 function Search() {
   const [search, setSearch] = useState('');
+  const [filters, setFilters] = useState(null);
   const [filterView, setFilterView] = useState(false);
   return (
     <>
@@ -26,9 +27,7 @@ function Search() {
           <h2>Les annonces</h2>
           <Searchbar search={search} setSearch={setSearch} />
           <div
-            className={
-              filterView ? styles.filterButtonOn : styles.filterButtonOff
-            }
+            className={filters ? styles.filterButtonOn : styles.filterButtonOff}
             role="button"
             onClick={() => {
               setFilterView(!filterView);
@@ -37,8 +36,16 @@ function Search() {
             <p>Filtrer</p>
             <span className={styles.arrowFilter}>&#728;</span>
           </div>
-          {filterView ? <AddFilter filterView={filterView} /> : ''}
-          <AnnouncementsList search={search} />
+          {filterView ? (
+            <AddFilter
+              filters={filters}
+              setFilters={setFilters}
+              filterView={filterView}
+            />
+          ) : (
+            ''
+          )}
+          <AnnouncementsList search={search} filters={filters} />
         </main>
       </div>
     </>

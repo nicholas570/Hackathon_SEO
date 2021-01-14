@@ -5,20 +5,22 @@ import axios from 'axios';
 import AnnouncementCard from './AnnouncementCard';
 import styles from '../../css/AnnouncementsList.module.css';
 
-export default function AnnouncementsList({ search }) {
+export default function AnnouncementsList({ search, filters }) {
   const [announcements, setannouncements] = useState([]);
+  let URL = `${process.env.REACT_APP_SERVER}/annonces`;
+
+  if (filters) {
+    URL += `?langage=${filters.langage}`;
+  }
 
   const fetchAnnouncements = async () => {
     try {
-      const result = await axios.get(
-        `${process.env.REACT_APP_SERVER}/annonces`,
-        {
-          headers: {
-            authorization: `Bearer ${localStorage.getItem('TOKEN')}`,
-            'Access-Control-Allow-Origin': process.env.REACT_APP_SERVER,
-          },
-        }
-      );
+      const result = await axios.get(URL, {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem('TOKEN')}`,
+          'Access-Control-Allow-Origin': process.env.REACT_APP_SERVER,
+        },
+      });
 
       const { annonces } = result.data;
       setannouncements(annonces);
@@ -29,7 +31,7 @@ export default function AnnouncementsList({ search }) {
 
   useEffect(() => {
     fetchAnnouncements();
-  }, []);
+  }, [filters, search]);
 
   return (
     <section className={styles.announcementsContainer}>
@@ -53,7 +55,7 @@ export default function AnnouncementsList({ search }) {
             />
           ))
       ) : (
-        <p>Pas d'annonce pour le moment</p>
+        <p>Pas d&apos;annonce pour le moment</p>
       )}
     </section>
   );
