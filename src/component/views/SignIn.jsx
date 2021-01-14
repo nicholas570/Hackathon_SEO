@@ -7,6 +7,7 @@ import AppInput from '../common/app-input/AppInput';
 
 const SignIn = () => {
   const history = useHistory();
+
   return (
     <section className={Styles.signIn}>
       <div className={Styles.signInBgImg}>

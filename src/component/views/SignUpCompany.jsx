@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useHistory } from 'react-router-dom';
 
 import AppButton from '../common/app-button/AppButton';
@@ -8,6 +8,8 @@ import Styles from '../../css/SignUp.module.css';
 
 const SignUpCompany = () => {
   const history = useHistory();
+
+  const [state, setState] = useState(" ")
   return (
     <section className={Styles.signUp}>
       <div className={Styles.signUpBgImg}>

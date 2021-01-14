@@ -4,14 +4,13 @@ import PropTypes from 'prop-types';
 import styles from '../../../css/AppButton.module.css';
 
 function AppButton(props) {
-  const { title, srcImg, altImg, /* isSubmit, disabled */ onClick } = props;
+  const { title, srcImg, altImg, isSubmit, disabled, onClick } = props;
   return (
     <button
-      className={styles.appButton}
-      // className={`${styles.appButton} ${disabled && styles.btnDisabled}`}
-      type="button"
-      // type={isSubmit ? 'submit' : 'button'}
-      // disabled={disabled}
+      className={`${styles.appButton} ${disabled && styles.btnDisabled}`}
+      // eslint-disable-next-line react/button-has-type
+      type={isSubmit ? 'submit' : 'button'}
+      disabled={disabled}
       onClick={() => onClick()}
     >
       {srcImg && <img className={styles.btnIcon} src={srcImg} alt={altImg} />}
@@ -23,16 +22,16 @@ function AppButton(props) {
 AppButton.defaultProps = {
   srcImg: null,
   altImg: null,
-  // isSubmit: false,
-  // disabled: false,
+  isSubmit: false,
+  disabled: false,
 };
 
 AppButton.propTypes = {
   title: PropTypes.string.isRequired,
   srcImg: PropTypes.string,
   altImg: PropTypes.string,
-  // isSubmit: PropTypes.bool,
-  // disabled: PropTypes.bool,
+  isSubmit: PropTypes.bool,
+  disabled: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
 };
 
