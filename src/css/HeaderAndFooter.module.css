@@ -12,7 +12,7 @@
 }
 
 .container {
-  padding: 25px;
+  padding: 0px;
 }
 
 .arrow {
@@ -22,5 +22,8 @@
 @media screen and (min-width: 640px) {
   .brand {
     margin: auto;
+  }
+  .container {
+    padding: 25px;
   }
 }
