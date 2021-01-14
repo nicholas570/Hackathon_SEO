@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 import AnnouncementCard from './AnnouncementCard';
@@ -8,7 +7,6 @@ import styles from '../../css/AnnouncementsList.module.css';
 
 export default function AnnouncementsList({ search }) {
   const [announcements, setannouncements] = useState([]);
-  const history = useHistory();
 
   const fetchAnnouncements = async () => {
     try {
@@ -25,10 +23,7 @@ export default function AnnouncementsList({ search }) {
       const { annonces } = result.data;
       setannouncements(annonces);
     } catch (error) {
-      if (error) {
-        console.error(error);
-        history.push('/Connexion');
-      }
+      console.error(error.response.data);
     }
   };
 
@@ -38,22 +33,28 @@ export default function AnnouncementsList({ search }) {
 
   return (
     <section className={styles.announcementsContainer}>
-      {announcements
-        .filter(
-          (announcement) =>
-            announcement.nom.toLowerCase().includes(search.toLowerCase()) ||
-            announcement.localisation
-              .toLowerCase()
-              .includes(search.toLowerCase()) ||
-            announcement.expertise.toLowerCase().includes(search.toLowerCase())
-        )
-        .map((announcement, index) => (
-          <AnnouncementCard
-            key={announcement.id}
-            announcement={announcement}
-            alt={index}
-          />
-        ))}
+      {announcements.length > 0 ? (
+        announcements
+          .filter(
+            (announcement) =>
+              announcement.nom.toLowerCase().includes(search.toLowerCase()) ||
+              announcement.localisation
+                .toLowerCase()
+                .includes(search.toLowerCase()) ||
+              announcement.expertise
+                .toLowerCase()
+                .includes(search.toLowerCase())
+          )
+          .map((announcement, index) => (
+            <AnnouncementCard
+              key={announcement.id}
+              announcement={announcement}
+              alt={index}
+            />
+          ))
+      ) : (
+        <p>Pas d'annonce pour le moment</p>
+      )}
     </section>
   );
 }
