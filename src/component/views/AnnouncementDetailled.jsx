@@ -49,6 +49,10 @@ export default function AnnouncementDetaille() {
       });
   }, [id]);
 
+  function descriptionHTML() {
+    return { __html: annoucement.description };
+  }
+
   const date = dayjs(annoucement.debut).format('DD/MM/YYYY');
   return (
     <>
@@ -97,9 +101,10 @@ export default function AnnouncementDetaille() {
           </section>
           <section className={styles.annonceDetailDesription}>
             <h3 className={styles.annonceDetailDesriptionTitle}>Description</h3>
-            <p className={styles.annonceDetailText}>
-              {annoucement.description}
-            </p>
+            <p
+              className={styles.annonceDetailText}
+              dangerouslySetInnerHTML={descriptionHTML()}
+            />
           </section>
           <section className={styles.annonceDetailPrixContener}>
             <button
