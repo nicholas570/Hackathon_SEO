@@ -5,7 +5,6 @@ import AnnoucementCard from '../payement/AnnoucementCard/AnnoucementCard';
 import Payement from '../common/Payment/Payement';
 import { AnnonceContext } from '../../Context/AnnonceContext';
 
-import linkedinSmall from '../../Assets/Images/linkedin-small.png';
 import styles from '../../css/Shipping.module.css';
 import cardPayement from '../../Assets/Logo/creditcard.svg';
 import cpf from '../../Assets/Logo/cpf.png';
@@ -33,8 +32,8 @@ function Shipping() {
         <link rel="canonical" href="http://mysite.com/example" />
         <title>Panier</title>
       </Helmet>
-      <div className={styles.ContainerShipping}>
-        <main>
+      <main className={styles.ContainerShipping}>
+        <section>
           <h2 className={styles.titleShipping}>Mon panier</h2>
           <div className={styles.ShippingCard}>
             <h3 className={styles.titleAchat}>
@@ -81,8 +80,8 @@ function Shipping() {
               />
             </section>
           </div>
-        </main>
-      </div>
+        </section>
+      </main>
     </>
   );
 }

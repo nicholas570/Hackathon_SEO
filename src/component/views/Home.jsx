@@ -27,7 +27,7 @@ function Home() {
           <title>Inscription | Connection</title>
         </Helmet>
 
-        <div className={Styles.homeContent}>
+        <main className={Styles.homeContent}>
           <h1 className={Styles.homeTitle}>Paye ton stage</h1>
           <p className={Styles.homeDescription}>Lorem lorem lorem</p>
           <AppButton
@@ -39,7 +39,7 @@ function Home() {
             onClick={() => history.push('/inscription-entreprise')}
           />
           <AppButton title="Connexion" onClick={redirect} />
-        </div>
+        </main>
       </div>
     </section>
   );
