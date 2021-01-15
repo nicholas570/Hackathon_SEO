@@ -54,7 +54,9 @@ const SignIn = () => {
           <div className={Styles.signInContent}>
             <div className={Styles.signInHead}>
               <h1 className={Styles.signInTitle}>Paye ton stage</h1>
-              <p className={Styles.signInDescription}>Lorem lorem lorem</p>
+              <p className={Styles.signInDescription}>
+                Un stage vaut mieux que deux tu l’auras.
+              </p>
             </div>
             <div className={Styles.signInGrpButton}>
               <AppButton

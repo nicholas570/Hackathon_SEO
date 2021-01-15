@@ -74,7 +74,9 @@ const SignUpCompany = () => {
           <div className={Styles.signUpContent}>
             <div className={Styles.signUpHead}>
               <h1 className={Styles.signUpTitle}>Paye ton stage</h1>
-              <p className={Styles.signUpDescription}>Lorem lorem lorem</p>
+              <p className={Styles.signUpDescription}>
+                Un stage vaut mieux que deux tu l’auras.
+              </p>
             </div>
             <div className={Styles.signUpGrpButton}>
               <AppButton
