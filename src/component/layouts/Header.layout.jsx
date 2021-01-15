@@ -25,7 +25,7 @@ function HeaderLayout({ children }) {
           {annonce.length > 0 && <Notif length={annonce.length} />}
         </Link>
       </header>
-      <div className={style.container}>{children}</div>
+      <body className={style.container}>{children}</body>
     </>
   );
 }
