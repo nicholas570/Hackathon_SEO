@@ -1,14 +1,17 @@
 import React from 'react';
 
 import style from './AnnoucementCard.module.css';
+import trash from '../../../Assets/icons/delete.svg';
 import announcementPropType from '../../prop-types/AnnouncementPropTypes';
 
 const AnnoucementCard = ({
+  id,
   logo_small,
   name,
   localisation,
   expertise,
   prix,
+  handleCard,
 }) => {
   return (
     <div className={style.CardLayout}>
@@ -25,6 +28,13 @@ const AnnoucementCard = ({
         </div>
         <p className={style.price}>{`${prix}€`}</p>
       </section>
+      <button
+        onClick={() => handleCard(id)}
+        className={style.buttonTrash}
+        type="button"
+      >
+        <img src={trash} alt="suprimer l'annonce" />
+      </button>
     </div>
   );
 };
