@@ -32,7 +32,9 @@ function Home() {
 
         <main className={Styles.homeContent}>
           <h1 className={Styles.homeTitle}>Paye ton stage</h1>
-          <p className={Styles.homeDescription}>Lorem lorem lorem</p>
+          <p className={Styles.homeDescription}>
+            Un stage vaut mieux que deux tu l’auras.
+          </p>
           <AppButton
             title="Inscription stagiaire"
             onClick={() => history.push('/inscription-stagiaire')}
