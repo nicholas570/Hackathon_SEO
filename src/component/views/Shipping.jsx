@@ -29,7 +29,10 @@ function Shipping() {
         />
         <meta name="author" content="Les Stagiaires X Paye Ton Stage" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <link rel="canonical" href="http://mysite.com/example" />
+        <link
+          rel="canonical"
+          href="https://nts-js-202009-h2-frontend-stagiaires.jsrover.wilders.dev/panier"
+        />
         <title>Panier</title>
       </Helmet>
       <main className={styles.ContainerShipping}>

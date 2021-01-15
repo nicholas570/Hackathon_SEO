@@ -68,7 +68,10 @@ export default function AnnouncementDetaille() {
           content="stage, alternance, dev, developpeur, tech, etudes, entreprise, technologie, langage, front-end, back-end, full-stack"
         />
         <title>Annonce Détaillée</title>
-        <link rel="canonical" href="http://mysite.com/example" />
+        <link
+          rel="canonical"
+          href="https://nts-js-202009-h2-frontend-stagiaires.jsrover.wilders.dev/annonces/"
+        />
       </Helmet>
       <main className={styles.annonceDetailContainer}>
         <section>
