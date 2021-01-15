@@ -16,7 +16,7 @@ export default function AnnouncementCard({ announcement }) {
   } = announcement;
   return (
     <div className={styles.cardContainer}>
-      <img className={styles.cardImage} src={logo_small} alt="logo" />
+      <img className={styles.cardImage} src={logo_small} alt={nom} />
       <div className={styles.cardDescription}>
         <h3>{nom}</h3>
         <h4>
