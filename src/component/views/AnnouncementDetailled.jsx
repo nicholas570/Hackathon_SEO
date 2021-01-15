@@ -47,7 +47,7 @@ export default function AnnouncementDetaille() {
         alert(message);
         console.error(err);
       });
-  }, []);
+  }, [id]);
 
   const date = dayjs(annoucement.debut).format('DD/MM/YYYY');
   return (
@@ -89,6 +89,7 @@ export default function AnnouncementDetaille() {
             <div className={styles.annonceDetailStage}>
               <p>{annoucement.localisation}</p>
               <p>{annoucement.duree}</p>
+              <p>{annoucement.type}</p>
               <p className={styles.annonceDetailDebut}>{date}</p>
             </div>
           </div>
@@ -105,6 +106,7 @@ export default function AnnouncementDetaille() {
               onClick={() => handleAnnonces()}
             >
               {annoucement.prix}
+              &nbsp;€
             </button>
             <FontAwesomeIcon
               className={styles.annonceDetailCart}
