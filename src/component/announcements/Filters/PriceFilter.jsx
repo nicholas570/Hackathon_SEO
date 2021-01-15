@@ -5,7 +5,7 @@ export default function PriceFilter() {
   return (
     <div className={styles.blocFilter}>
       <p>Prix: &nbsp;</p>
-      <select name="prix" id="prix">
+      <select className={styles.inputSelect} name="prix" id="prix">
         <option value="Croissant">Croissant</option>
         <option value="Décroissant">Décroissant</option>
       </select>

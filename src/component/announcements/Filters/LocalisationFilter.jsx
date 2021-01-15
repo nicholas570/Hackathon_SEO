@@ -5,7 +5,11 @@ export default function LocalisationFilter() {
   return (
     <div className={styles.blocFilter}>
       <p>Localisation : &nbsp;</p>
-      <select name="localisation" id="localisation-select">
+      <select
+        className={styles.inputSelect}
+        name="localisation"
+        id="localisation-select"
+      >
         <option name="localisation" value="defaultLocalisation">
           Choisir une localisation
         </option>
