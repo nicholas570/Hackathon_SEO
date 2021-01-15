@@ -67,7 +67,7 @@ export default function AnnouncementDetaille() {
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
       <main className={styles.annonceDetailContainer}>
-        <div>
+        <section>
           <picture>
             <source
               srcSet={annoucement.logo_small}
@@ -80,7 +80,7 @@ export default function AnnouncementDetaille() {
             />
           </picture>
 
-          <div className={styles.annonceDetailInfo}>
+          <section className={styles.annonceDetailInfo}>
             <div className={styles.annonceDetailEnt}>
               <h3>{annoucement.nom}</h3>
               <p>{annoucement.expertise}</p>
@@ -90,16 +90,18 @@ export default function AnnouncementDetaille() {
               <p>{annoucement.localisation}</p>
               <p>{annoucement.duree}</p>
               <p>{annoucement.type}</p>
-              <p className={styles.annonceDetailDebut}>{date}</p>
+              <time dateTime={date} className={styles.annonceDetailDebut}>
+                {date}
+              </time>
             </div>
-          </div>
-          <div className={styles.annonceDetailDesription}>
+          </section>
+          <section className={styles.annonceDetailDesription}>
             <h3 className={styles.annonceDetailDesriptionTitle}>Description</h3>
             <p className={styles.annonceDetailText}>
               {annoucement.description}
             </p>
-          </div>
-          <div className={styles.annonceDetailPrixContener}>
+          </section>
+          <section className={styles.annonceDetailPrixContener}>
             <button
               className={styles.annonceDetailPrix}
               type="button"
@@ -112,8 +114,8 @@ export default function AnnouncementDetaille() {
               className={styles.annonceDetailCart}
               icon={faShoppingCart}
             />
-          </div>
-        </div>
+          </section>
+        </section>
       </main>
     </>
   );
