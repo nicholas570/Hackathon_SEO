@@ -5,7 +5,6 @@ import AnnoucementCard from '../payement/AnnoucementCard/AnnoucementCard';
 import Payement from '../common/Payment/Payement';
 import { AnnonceContext } from '../../Context/AnnonceContext';
 
-import linkedinSmall from '../../Assets/Images/linkedin-small.png';
 import styles from '../../css/Shipping.module.css';
 import cardPayement from '../../Assets/Logo/creditcard.svg';
 import cpf from '../../Assets/Logo/cpf.png';
