@@ -25,7 +25,7 @@ export default function AnnouncementCard({ announcement }) {
         <p>{localisation}</p>
       </div>
       <button className={styles.cardButton} type="button">
-        <Link to={`/annonces/${slug}/${id}`}>{`${prix}€`}</Link>
+        <Link to={`/annonces/${slug}/${id}`}>{`${prix} €`}</Link>
       </button>
     </div>
   );

@@ -26,16 +26,31 @@ function Search() {
         <main>
           <h2>Les annonces</h2>
           <Searchbar search={search} setSearch={setSearch} />
-          <div
-            className={filters ? styles.filterButtonOn : styles.filterButtonOff}
-            role="button"
-            onClick={() => {
-              setFilterView(!filterView);
-            }}
-          >
-            <p>Filtrer</p>
-            <span className={styles.arrowFilter}>&#728;</span>
+          <div className={filters ? styles.ButtonsFilters : ' '}>
+            {filters ? (
+              <div
+                className={styles.removeFilters}
+                onClick={() => setFilters('')}
+              >
+                x Réinitialiser
+              </div>
+            ) : (
+              ''
+            )}
+            <div
+              className={
+                filters ? styles.filterButtonOn : styles.filterButtonOff
+              }
+              role="button"
+              onClick={() => {
+                setFilterView(!filterView);
+              }}
+            >
+              <p>Filtrer</p>
+              <span className={styles.arrowFilter}>&#728;</span>
+            </div>
           </div>
+
           {filterView ? (
             <AddFilter
               filters={filters}

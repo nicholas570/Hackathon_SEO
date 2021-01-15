@@ -17,7 +17,7 @@ export default function StudiesFilter() {
         <input type="radio" id="bac4studies" name="niveau_etudes" />
         Bac +4
       </label>
-      <label htmlFor="bac3studies">
+      <label htmlFor="all">
         <input type="radio" id="all" name="niveau_etudes" />
         Tous niveaux
       </label>

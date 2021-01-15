@@ -5,15 +5,15 @@ export default function ExpertiseFilter() {
   return (
     <div className={styles.blocFilter}>
       <p>Expertise : &nbsp;</p>
-      <label htmlFor="fullStack">
+      <label htmlFor="Full-Stack">
         <input type="radio" id="Full-Stack" name="expertise" />
         Full-Stack
       </label>
-      <label htmlFor="frontEnd">
+      <label htmlFor="Front-End">
         <input type="radio" id="Front-End" name="expertise" />
         Front-End
       </label>
-      <label htmlFor="backEnd">
+      <label htmlFor="Back-End">
         <input type="radio" id="Back-End" name="expertise" />
         Back-End
       </label>

@@ -43,6 +43,10 @@ export default function AnnouncementsList({ search, filters }) {
               announcement.localisation
                 .toLowerCase()
                 .includes(search.toLowerCase()) ||
+              announcement.type.toLowerCase().includes(search.toLowerCase()) ||
+              announcement.langage
+                .toLowerCase()
+                .includes(search.toLowerCase()) ||
               announcement.expertise
                 .toLowerCase()
                 .includes(search.toLowerCase())

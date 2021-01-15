@@ -13,8 +13,8 @@ export default function TypeFilter() {
         <input type="radio" id="alternanceType" name="type" />
         Alternance
       </label>
-      <label htmlFor="alternanceType">
-        <input type="radio" id="alternanceType" name="type" />
+      <label htmlFor="allType">
+        <input type="radio" id="allType" name="type" />
         Les deux
       </label>
     </div>
