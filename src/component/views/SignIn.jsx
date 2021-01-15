@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
+import Auth from '../../authenticate/Authenticate';
 import Styles from '../../css/SignIn.module.css';
 import AppButton from '../common/app-button/AppButton';
 import AppInput from '../common/app-input/AppInput';
@@ -27,7 +28,8 @@ const SignIn = () => {
       .then(({ data }) => {
         localStorage.setItem('TOKEN', data.token);
         localStorage.setItem('USER', JSON.stringify(data.user));
-        history.push('/annonces');
+
+        Auth.logIn(() => history.push('/annonces'));
       })
       .catch((err) => {
         alert(err.response.data);
