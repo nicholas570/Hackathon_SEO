@@ -50,7 +50,7 @@
 
 @media screen and (min-width: 768px) {
   .ShippingCard {
-    height: 50vh;
+    min-height: 50vh;
     padding: 1rem;
     width: 60vw;
   }

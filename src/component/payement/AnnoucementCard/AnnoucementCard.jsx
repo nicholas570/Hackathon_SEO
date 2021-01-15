@@ -12,14 +12,18 @@ const AnnoucementCard = ({
 }) => {
   return (
     <div className={style.CardLayout}>
-      <img src={logo_small} alt={`logo ${name}`} />
+      <img
+        className={style.pictureCompany}
+        src={logo_small}
+        alt={`logo ${name}`}
+      />
       <section className={style.descriptionCard}>
         <div className={style.decriptionCard}>
           <h3 className={style.company}>{name}</h3>
           <h4 className={style.expert}>{expertise}</h4>
           <p className={style.location}>{localisation}</p>
         </div>
-        <p className={style.price}>{prix}</p>
+        <p className={style.price}>{`${prix}€`}</p>
       </section>
     </div>
   );

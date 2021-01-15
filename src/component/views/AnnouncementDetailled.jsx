@@ -18,9 +18,10 @@ export default function AnnouncementDetaille() {
   const { annonce, setAnnonce } = useContext(AnnonceContext);
   const [annoucement, setAnnoucement] = useState([]);
   const { id } = useParams();
+
   const handleAnnonces = () => {
-    const set1 = new Set([]);
-    setAnnonce([...set1, annoucement]);
+    const set1 = new Set([...annonce, annoucement]);
+    setAnnonce([...set1]);
   };
 
   useEffect(() => {

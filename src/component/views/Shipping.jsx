@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet';
 
 import AnnoucementCard from '../payement/AnnoucementCard/AnnoucementCard';
 import Payement from '../common/Payment/Payement';
+import { AnnonceContext } from '../../Context/AnnonceContext';
 
 import linkedinSmall from '../../Assets/Images/linkedin-small.png';
 import styles from '../../css/Shipping.module.css';
@@ -11,6 +12,9 @@ import cpf from '../../Assets/Logo/cpf.png';
 import paypal from '../../Assets/Logo/pp.png';
 
 function Shipping() {
+  const { annonce } = useContext(AnnonceContext);
+
+  const price = annonce.reduce((acc, curr) => acc + curr.prix, 0);
   return (
     <>
       <Helmet>
@@ -30,18 +34,27 @@ function Shipping() {
           <div className={styles.ShippingCard}>
             <h3 className={styles.titleAchat}>
               Mes achats&nbsp;
-              <span className={styles.numberAnnounceBasket}>(1)</span>
+              <span className={styles.numberAnnounceBasket}>
+                {`(${annonce.length})`}
+              </span>
             </h3>
-            <AnnoucementCard
-              logo_small={linkedinSmall}
-              name="Linkedin"
-              localisation="Nantes"
-              expertise="Full Stack"
-              prix="250€"
-            />
+            {annonce.length > 0 ? (
+              annonce.map((card) => (
+                <AnnoucementCard
+                  key={card.id}
+                  logo_small={card.logo_small}
+                  name={card.nom}
+                  localisation={card.localisation}
+                  expertise={card.expertise}
+                  prix={card.prix}
+                />
+              ))
+            ) : (
+              <p>Panier Vide</p>
+            )}
             <p className={styles.descritionPrice}>
               Montant à payer:
-              <span className={styles.descritionPriceSpan}>250€</span>
+              <span className={styles.descritionPriceSpan}>{`${price}€`}</span>
             </p>
             <section className={styles.wrapperAllPayement}>
               <Payement

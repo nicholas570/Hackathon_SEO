@@ -3,6 +3,11 @@
   background-color: #fff;
   padding-right: 0.4rem;
   width: 90%;
+  margin: 1rem 0;
+}
+
+.pictureCompany {
+  max-width: 190px;
 }
 
 .descriptionCard {

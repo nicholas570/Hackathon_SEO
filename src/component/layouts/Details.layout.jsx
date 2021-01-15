@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 import Return from '../common/Return';
+import Notif from '../common/notif/Notif';
+import { AnnonceContext } from '../../Context/AnnonceContext';
 
 import style from '../../css/HeaderAndFooter.module.css';
 
 function DetailsLayout({ children }) {
+  const { annonce } = useContext(AnnonceContext);
   return (
     <>
       <header className={style.header}>
@@ -20,6 +23,7 @@ function DetailsLayout({ children }) {
             }}
             icon={faShoppingCart}
           />
+          {annonce.length > 0 && <Notif length={annonce.length} />}
         </Link>
       </header>
       <section className={style.container}>{children}</section>
