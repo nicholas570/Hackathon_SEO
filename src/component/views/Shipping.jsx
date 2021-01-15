@@ -12,9 +12,14 @@ import cpf from '../../Assets/Logo/cpf.png';
 import paypal from '../../Assets/Logo/pp.png';
 
 function Shipping() {
-  const { annonce } = useContext(AnnonceContext);
+  const { annonce, setAnnonce } = useContext(AnnonceContext);
 
   const price = annonce.reduce((acc, curr) => acc + curr.prix, 0);
+
+  const handleAnnouncement = (id) => {
+    setAnnonce(annonce.filter((card) => card.id !== id));
+  };
+
   return (
     <>
       <Helmet>
@@ -42,11 +47,13 @@ function Shipping() {
               annonce.map((card) => (
                 <AnnoucementCard
                   key={card.id}
+                  id={card.id}
                   logo_small={card.logo_small}
                   name={card.nom}
                   localisation={card.localisation}
                   expertise={card.expertise}
                   prix={card.prix}
+                  handleCard={(id) => handleAnnouncement(id)}
                 />
               ))
             ) : (
