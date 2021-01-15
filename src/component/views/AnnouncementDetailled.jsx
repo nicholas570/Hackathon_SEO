@@ -66,7 +66,7 @@ export default function AnnouncementDetaille() {
         <title>Annonce Détaillée</title>
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
-      <div className={styles.annonceDetailContainer}>
+      <main className={styles.annonceDetailContainer}>
         <div>
           <picture>
             <source
@@ -114,7 +114,7 @@ export default function AnnouncementDetaille() {
             />
           </div>
         </div>
-      </div>
+      </main>
     </>
   );
 }

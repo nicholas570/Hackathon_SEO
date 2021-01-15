@@ -32,8 +32,8 @@ function Shipping() {
         <link rel="canonical" href="http://mysite.com/example" />
         <title>Panier</title>
       </Helmet>
-      <div className={styles.ContainerShipping}>
-        <main>
+      <main className={styles.ContainerShipping}>
+        <section>
           <h2 className={styles.titleShipping}>Mon panier</h2>
           <div className={styles.ShippingCard}>
             <h3 className={styles.titleAchat}>
@@ -80,8 +80,8 @@ function Shipping() {
               />
             </section>
           </div>
-        </main>
-      </div>
+        </section>
+      </main>
     </>
   );
 }

@@ -26,7 +26,7 @@ function DetailsLayout({ children }) {
           {annonce.length > 0 && <Notif length={annonce.length} />}
         </Link>
       </header>
-      <section className={style.container}>{children}</section>
+      <body className={style.container}>{children}</body>
 
       <footer className={style.container}>
         <Return path="/annonces" />
