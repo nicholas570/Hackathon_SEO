@@ -153,7 +153,7 @@ const SignUpCompany = () => {
                 />
                 <span>j&apos;accepte</span>
               </div>
-              <AppButton title="Je me connecte" isSubmit />
+              <AppButton title="Je m'inscris" isSubmit />
             </form>
           </div>
         </div>
