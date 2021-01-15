@@ -6,6 +6,7 @@ export default function LanguageFilter({ filters, setFilters }) {
     <div className={styles.blocFilter}>
       <p>Langage : &nbsp;</p>
       <select
+        className={styles.inputSelect}
         name="langage"
         id="language-select"
         onChange={(e) => setFilters({ [e.target.name]: e.target.value })}
