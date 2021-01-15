@@ -1,10 +1,10 @@
-.home { 
+.home {
   width: 100vw;
   height: 100vh;
 }
 
 .homeBgImg {
-  background-image: url('../Assets//Images/background.png');
+  background-image: url('../Assets//Images/background.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -30,7 +30,4 @@
 .homeDescription {
   color: var(--light-grey-font-background);
   font-size: 1rem;
-  
 }
-
-

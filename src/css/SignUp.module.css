@@ -1,11 +1,11 @@
-.signUp{
+.signUp {
   width: 100%;
   height: 100%;
   background-color: var(--cream-color);
 }
 
 .signUpBgImg {
-  background-image: url('../Assets//Images/background.png');
+  background-image: url('../Assets//Images/background.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -40,7 +40,6 @@
   font-size: 2rem;
 }
 
-
 .signUpDescription {
   color: var(--light-grey-font-background);
   font-size: 1rem;
@@ -66,34 +65,34 @@
   margin: 1rem 1rem 1rem 0;
 }
 
-.signUpGrpButton{
+.signUpGrpButton {
   display: none;
 }
 @media screen and (min-width: 768px) {
-  .signUp{
-  height: 100vh;
+  .signUp {
+    height: 100vh;
   }
 
   .signUpBgImg {
-  width: 50%;
-  height: 100vh;
-}
+    width: 50%;
+    height: 100vh;
+  }
 
-.signUpContent{
-  padding-bottom: 0;
-}
+  .signUpContent {
+    padding-bottom: 0;
+  }
 
-.signUpForm {
-  position: absolute;
-right: 4%;
-width: 40%;
-margin: auto 0;
-}
-.signUpGrpButton{
-display: block;
-width: 20rem;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-}
+  .signUpForm {
+    position: absolute;
+    right: 4%;
+    width: 40%;
+    margin: auto 0;
+  }
+  .signUpGrpButton {
+    display: block;
+    width: 20rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }

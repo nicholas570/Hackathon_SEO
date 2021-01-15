@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://localhost:3000/annonces</loc>
+    <loc>https://nts-js-202009-h2-frontend-stagiaires.jsrover.wilders.dev/annonces</loc>
     <lastmod>2021-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1</priority>

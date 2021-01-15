@@ -5,7 +5,7 @@
 }
 
 .signInBgImg {
-  background-image: url('../Assets//Images/background.png');
+  background-image: url('../Assets//Images/background.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -35,7 +35,7 @@
   margin-top: 2.5rem;
 }
 
-.signInSecondTitle{
+.signInSecondTitle {
   font-size: 2rem;
 }
 
@@ -63,28 +63,27 @@
   text-align: right;
 }
 
-.signInGrpButton{
+.signInGrpButton {
   display: none;
 }
 
 @media screen and (min-width: 768px) {
-.signInBgImg{
-  width: 50%;
-}
+  .signInBgImg {
+    width: 50%;
+  }
 
-.signInForm{
-  position: absolute;
-  margin: auto 0;
-  right: 4%;
-  width: 40%;
-}
+  .signInForm {
+    position: absolute;
+    margin: auto 0;
+    right: 4%;
+    width: 40%;
+  }
 
-.signInGrpButton {
-  display: block;
-  width: 20rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
+  .signInGrpButton {
+    display: block;
+    width: 20rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
